@@ -1,0 +1,946 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2952BEB1F0DFEA6A79326DED /* libPods-EasyAppUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B6C63A13D43AF09E158DA0 /* libPods-EasyAppUITests.a */; };
+		99E332D4201B79F500EE31DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E332D3201B79F500EE31DD /* AppDelegate.m */; };
+		99E332D7201B79F500EE31DD /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E332D6201B79F500EE31DD /* MainViewController.m */; };
+		99E332DA201B79F500EE31DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E332D8201B79F500EE31DD /* Main.storyboard */; };
+		99E332DC201B79F500EE31DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99E332DB201B79F500EE31DD /* Assets.xcassets */; };
+		99E332DF201B79F500EE31DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E332DD201B79F500EE31DD /* LaunchScreen.storyboard */; };
+		99E332E2201B79F500EE31DD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E332E1201B79F500EE31DD /* main.m */; };
+		99E332EC201B79F600EE31DD /* EasyAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E332EB201B79F600EE31DD /* EasyAppTests.m */; };
+		99E332F7201B79F600EE31DD /* EasyAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E332F6201B79F600EE31DD /* EasyAppUITests.m */; };
+		99E3334B201B7C3C00EE31DD /* UIImageView+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E3332A201B7C3C00EE31DD /* UIImageView+GIF.m */; };
+		99E3334C201B7C3C00EE31DD /* UIView+YXYUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E3332C201B7C3C00EE31DD /* UIView+YXYUI.m */; };
+		99E3334D201B7C3C00EE31DD /* CALayer+PauseAimate.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E3332E201B7C3C00EE31DD /* CALayer+PauseAimate.m */; };
+		99E3334F201B7C3C00EE31DD /* UILabel+YXYLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E33331201B7C3C00EE31DD /* UILabel+YXYLabel.m */; };
+		99E33350201B7C3C00EE31DD /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E33334201B7C3C00EE31DD /* UIImage+Extension.m */; };
+		99E33351201B7C3C00EE31DD /* NSObject+JsonHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E33335201B7C3C00EE31DD /* NSObject+JsonHelp.m */; };
+		99E33352201B7C3C00EE31DD /* NSDate+YXYDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E33336201B7C3C00EE31DD /* NSDate+YXYDate.m */; };
+		99E33353201B7C3C00EE31DD /* NSData+ZIP.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E33337201B7C3C00EE31DD /* NSData+ZIP.m */; };
+		99E33354201B7C3C00EE31DD /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E33338201B7C3C00EE31DD /* UIColor+Extension.m */; };
+		99E33355201B7C3C00EE31DD /* NSAttributedString+YYAttributedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E3333E201B7C3C00EE31DD /* NSAttributedString+YYAttributedString.m */; };
+		99E33356201B7C3C00EE31DD /* NSString+YXYString.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E3333F201B7C3C00EE31DD /* NSString+YXYString.m */; };
+		99E33357201B7C3C00EE31DD /* NSDictionary+YXYSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E33344201B7C3C00EE31DD /* NSDictionary+YXYSafe.m */; };
+		99E33358201B7C3C00EE31DD /* NSObject+YXYSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E33346201B7C3C00EE31DD /* NSObject+YXYSafe.m */; };
+		99E33359201B7C3C00EE31DD /* NSString+YXYSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E33347201B7C3C00EE31DD /* NSString+YXYSafe.m */; };
+		99E3335A201B7C3C00EE31DD /* NSArray+YXYSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E3334A201B7C3C00EE31DD /* NSArray+YXYSafe.m */; };
+		99E333A0201C672300EE31DD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E3339F201C672300EE31DD /* ViewController.m */; };
+		99E333A3201C673C00EE31DD /* BaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E333A2201C673C00EE31DD /* BaseViewModel.m */; };
+		99E333A6201C674900EE31DD /* ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E333A5201C674900EE31DD /* ViewModel.m */; };
+		99E333A9201C6B8500EE31DD /* DemoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E333A8201C6B8500EE31DD /* DemoView.m */; };
+		99E333B2201DC37700EE31DD /* ViewControllerContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E333B1201DC37700EE31DD /* ViewControllerContext.m */; };
+		9CDBD06BF4335E223931DA60 /* libPods-EasyAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3477CEC54534A16A9E8E166 /* libPods-EasyAppTests.a */; };
+		AFEB3410FE01B8702FDBBF0F /* libPods-EasyApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C81B1AA000847AE7C6955B /* libPods-EasyApp.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		99E332E8201B79F500EE31DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 99E332C7201B79F500EE31DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 99E332CE201B79F500EE31DD;
+			remoteInfo = EasyApp;
+		};
+		99E332F3201B79F600EE31DD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 99E332C7201B79F500EE31DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 99E332CE201B79F500EE31DD;
+			remoteInfo = EasyApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		21A5FA94C99E773B2A103876 /* Pods-EasyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyApp/Pods-EasyApp.debug.xcconfig"; sourceTree = "<group>"; };
+		48B6C63A13D43AF09E158DA0 /* libPods-EasyAppUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EasyAppUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7338EF257F75E784421C83BA /* Pods-EasyAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyAppTests/Pods-EasyAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		99E332CF201B79F500EE31DD /* EasyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		99E332D2201B79F500EE31DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		99E332D3201B79F500EE31DD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		99E332D5201B79F500EE31DD /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		99E332D6201B79F500EE31DD /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		99E332D9201B79F500EE31DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		99E332DB201B79F500EE31DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		99E332DE201B79F500EE31DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		99E332E0201B79F500EE31DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99E332E1201B79F500EE31DD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		99E332E7201B79F500EE31DD /* EasyAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		99E332EB201B79F600EE31DD /* EasyAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyAppTests.m; sourceTree = "<group>"; };
+		99E332ED201B79F600EE31DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99E332F2201B79F600EE31DD /* EasyAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EasyAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		99E332F6201B79F600EE31DD /* EasyAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EasyAppUITests.m; sourceTree = "<group>"; };
+		99E332F8201B79F600EE31DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99E33327201B7C3C00EE31DD /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
+		99E33328201B7C3C00EE31DD /* NSData+ZIP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ZIP.h"; sourceTree = "<group>"; };
+		99E3332A201B7C3C00EE31DD /* UIImageView+GIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+GIF.m"; sourceTree = "<group>"; };
+		99E3332C201B7C3C00EE31DD /* UIView+YXYUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YXYUI.m"; sourceTree = "<group>"; };
+		99E3332D201B7C3C00EE31DD /* UILabel+YXYLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+YXYLabel.h"; sourceTree = "<group>"; };
+		99E3332E201B7C3C00EE31DD /* CALayer+PauseAimate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+PauseAimate.m"; sourceTree = "<group>"; };
+		99E3332F201B7C3C00EE31DD /* UIImageView+GIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+GIF.h"; sourceTree = "<group>"; };
+		99E33331201B7C3C00EE31DD /* UILabel+YXYLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+YXYLabel.m"; sourceTree = "<group>"; };
+		99E33332201B7C3C00EE31DD /* UIView+YXYUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YXYUI.h"; sourceTree = "<group>"; };
+		99E33333201B7C3C00EE31DD /* CALayer+PauseAimate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+PauseAimate.h"; sourceTree = "<group>"; };
+		99E33334201B7C3C00EE31DD /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		99E33335201B7C3C00EE31DD /* NSObject+JsonHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JsonHelp.m"; sourceTree = "<group>"; };
+		99E33336201B7C3C00EE31DD /* NSDate+YXYDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YXYDate.m"; sourceTree = "<group>"; };
+		99E33337201B7C3C00EE31DD /* NSData+ZIP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ZIP.m"; sourceTree = "<group>"; };
+		99E33338201B7C3C00EE31DD /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
+		99E33339201B7C3C00EE31DD /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
+		99E3333A201B7C3C00EE31DD /* NSDate+YXYDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+YXYDate.h"; sourceTree = "<group>"; };
+		99E3333C201B7C3C00EE31DD /* NSString+YXYString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YXYString.h"; sourceTree = "<group>"; };
+		99E3333D201B7C3C00EE31DD /* NSAttributedString+YYAttributedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+YYAttributedString.h"; sourceTree = "<group>"; };
+		99E3333E201B7C3C00EE31DD /* NSAttributedString+YYAttributedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+YYAttributedString.m"; sourceTree = "<group>"; };
+		99E3333F201B7C3C00EE31DD /* NSString+YXYString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YXYString.m"; sourceTree = "<group>"; };
+		99E33340201B7C3C00EE31DD /* YXYCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXYCategory.h; sourceTree = "<group>"; };
+		99E33341201B7C3C00EE31DD /* NSObject+JsonHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JsonHelp.h"; sourceTree = "<group>"; };
+		99E33343201B7C3C00EE31DD /* NSString+YXYSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+YXYSafe.h"; sourceTree = "<group>"; };
+		99E33344201B7C3C00EE31DD /* NSDictionary+YXYSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+YXYSafe.m"; sourceTree = "<group>"; };
+		99E33345201B7C3C00EE31DD /* NSArray+YXYSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+YXYSafe.h"; sourceTree = "<group>"; };
+		99E33346201B7C3C00EE31DD /* NSObject+YXYSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YXYSafe.m"; sourceTree = "<group>"; };
+		99E33347201B7C3C00EE31DD /* NSString+YXYSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+YXYSafe.m"; sourceTree = "<group>"; };
+		99E33348201B7C3C00EE31DD /* NSDictionary+YXYSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+YXYSafe.h"; sourceTree = "<group>"; };
+		99E33349201B7C3C00EE31DD /* NSObject+YXYSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YXYSafe.h"; sourceTree = "<group>"; };
+		99E3334A201B7C3C00EE31DD /* NSArray+YXYSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YXYSafe.m"; sourceTree = "<group>"; };
+		99E3339E201C672300EE31DD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		99E3339F201C672300EE31DD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		99E333A1201C673C00EE31DD /* BaseViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewModel.h; sourceTree = "<group>"; };
+		99E333A2201C673C00EE31DD /* BaseViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewModel.m; sourceTree = "<group>"; };
+		99E333A4201C674900EE31DD /* ViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewModel.h; sourceTree = "<group>"; };
+		99E333A5201C674900EE31DD /* ViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewModel.m; sourceTree = "<group>"; };
+		99E333A7201C6B8500EE31DD /* DemoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoView.h; sourceTree = "<group>"; };
+		99E333A8201C6B8500EE31DD /* DemoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoView.m; sourceTree = "<group>"; };
+		99E333AB201C941B00EE31DD /* memo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = memo.h; sourceTree = "<group>"; };
+		99E333AF201DB7B700EE31DD /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		99E333B0201DC37700EE31DD /* ViewControllerContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerContext.h; sourceTree = "<group>"; };
+		99E333B1201DC37700EE31DD /* ViewControllerContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerContext.m; sourceTree = "<group>"; };
+		9AF3815CE6E9F80C85A9569C /* Pods-EasyAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyAppTests/Pods-EasyAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		9E60EF083BB86D0346AB0511 /* Pods-EasyAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyAppUITests/Pods-EasyAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A3477CEC54534A16A9E8E166 /* libPods-EasyAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EasyAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5C81B1AA000847AE7C6955B /* libPods-EasyApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EasyApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB3143538D0B98369326091E /* Pods-EasyAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyAppUITests/Pods-EasyAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E93A356EC0F78B7A96D47F0E /* Pods-EasyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyApp/Pods-EasyApp.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		99E332CC201B79F500EE31DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFEB3410FE01B8702FDBBF0F /* libPods-EasyApp.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99E332E4201B79F500EE31DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9CDBD06BF4335E223931DA60 /* libPods-EasyAppTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99E332EF201B79F600EE31DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2952BEB1F0DFEA6A79326DED /* libPods-EasyAppUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5A34C45205312BAE85E2FFFE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				21A5FA94C99E773B2A103876 /* Pods-EasyApp.debug.xcconfig */,
+				E93A356EC0F78B7A96D47F0E /* Pods-EasyApp.release.xcconfig */,
+				7338EF257F75E784421C83BA /* Pods-EasyAppTests.debug.xcconfig */,
+				9AF3815CE6E9F80C85A9569C /* Pods-EasyAppTests.release.xcconfig */,
+				9E60EF083BB86D0346AB0511 /* Pods-EasyAppUITests.debug.xcconfig */,
+				DB3143538D0B98369326091E /* Pods-EasyAppUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		99E332C6201B79F500EE31DD = {
+			isa = PBXGroup;
+			children = (
+				99E332D1201B79F500EE31DD /* EasyApp */,
+				99E332EA201B79F600EE31DD /* EasyAppTests */,
+				99E332F5201B79F600EE31DD /* EasyAppUITests */,
+				99E332D0201B79F500EE31DD /* Products */,
+				5A34C45205312BAE85E2FFFE /* Pods */,
+				F249E46B22621DBF27094C88 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		99E332D0201B79F500EE31DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				99E332CF201B79F500EE31DD /* EasyApp.app */,
+				99E332E7201B79F500EE31DD /* EasyAppTests.xctest */,
+				99E332F2201B79F600EE31DD /* EasyAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		99E332D1201B79F500EE31DD /* EasyApp */ = {
+			isa = PBXGroup;
+			children = (
+				99E333AA201C93DF00EE31DD /* doc */,
+				99E3339C201C66CC00EE31DD /* Template */,
+				99E33326201B7C3C00EE31DD /* Category */,
+				99E332D2201B79F500EE31DD /* AppDelegate.h */,
+				99E332D3201B79F500EE31DD /* AppDelegate.m */,
+				99E332D5201B79F500EE31DD /* MainViewController.h */,
+				99E332D6201B79F500EE31DD /* MainViewController.m */,
+				99E332D8201B79F500EE31DD /* Main.storyboard */,
+				99E332DB201B79F500EE31DD /* Assets.xcassets */,
+				99E332DD201B79F500EE31DD /* LaunchScreen.storyboard */,
+				99E332E0201B79F500EE31DD /* Info.plist */,
+				99E332E1201B79F500EE31DD /* main.m */,
+				99E333AF201DB7B700EE31DD /* PrefixHeader.pch */,
+			);
+			path = EasyApp;
+			sourceTree = "<group>";
+		};
+		99E332EA201B79F600EE31DD /* EasyAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				99E332EB201B79F600EE31DD /* EasyAppTests.m */,
+				99E332ED201B79F600EE31DD /* Info.plist */,
+			);
+			path = EasyAppTests;
+			sourceTree = "<group>";
+		};
+		99E332F5201B79F600EE31DD /* EasyAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				99E332F6201B79F600EE31DD /* EasyAppUITests.m */,
+				99E332F8201B79F600EE31DD /* Info.plist */,
+			);
+			path = EasyAppUITests;
+			sourceTree = "<group>";
+		};
+		99E33326201B7C3C00EE31DD /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				99E33340201B7C3C00EE31DD /* YXYCategory.h */,
+				99E33327201B7C3C00EE31DD /* UIColor+Extension.h */,
+				99E33338201B7C3C00EE31DD /* UIColor+Extension.m */,
+				99E33328201B7C3C00EE31DD /* NSData+ZIP.h */,
+				99E33337201B7C3C00EE31DD /* NSData+ZIP.m */,
+				99E33339201B7C3C00EE31DD /* UIImage+Extension.h */,
+				99E33334201B7C3C00EE31DD /* UIImage+Extension.m */,
+				99E33341201B7C3C00EE31DD /* NSObject+JsonHelp.h */,
+				99E33335201B7C3C00EE31DD /* NSObject+JsonHelp.m */,
+				99E3333A201B7C3C00EE31DD /* NSDate+YXYDate.h */,
+				99E33336201B7C3C00EE31DD /* NSDate+YXYDate.m */,
+				99E33329201B7C3C00EE31DD /* uikit */,
+				99E3333B201B7C3C00EE31DD /* str */,
+				99E33342201B7C3C00EE31DD /* safe_collection */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		99E33329201B7C3C00EE31DD /* uikit */ = {
+			isa = PBXGroup;
+			children = (
+				99E33332201B7C3C00EE31DD /* UIView+YXYUI.h */,
+				99E3332C201B7C3C00EE31DD /* UIView+YXYUI.m */,
+				99E3332D201B7C3C00EE31DD /* UILabel+YXYLabel.h */,
+				99E33331201B7C3C00EE31DD /* UILabel+YXYLabel.m */,
+				99E33333201B7C3C00EE31DD /* CALayer+PauseAimate.h */,
+				99E3332E201B7C3C00EE31DD /* CALayer+PauseAimate.m */,
+				99E3332F201B7C3C00EE31DD /* UIImageView+GIF.h */,
+				99E3332A201B7C3C00EE31DD /* UIImageView+GIF.m */,
+			);
+			path = uikit;
+			sourceTree = "<group>";
+		};
+		99E3333B201B7C3C00EE31DD /* str */ = {
+			isa = PBXGroup;
+			children = (
+				99E3333C201B7C3C00EE31DD /* NSString+YXYString.h */,
+				99E3333F201B7C3C00EE31DD /* NSString+YXYString.m */,
+				99E3333D201B7C3C00EE31DD /* NSAttributedString+YYAttributedString.h */,
+				99E3333E201B7C3C00EE31DD /* NSAttributedString+YYAttributedString.m */,
+			);
+			path = str;
+			sourceTree = "<group>";
+		};
+		99E33342201B7C3C00EE31DD /* safe_collection */ = {
+			isa = PBXGroup;
+			children = (
+				99E33343201B7C3C00EE31DD /* NSString+YXYSafe.h */,
+				99E33347201B7C3C00EE31DD /* NSString+YXYSafe.m */,
+				99E33348201B7C3C00EE31DD /* NSDictionary+YXYSafe.h */,
+				99E33344201B7C3C00EE31DD /* NSDictionary+YXYSafe.m */,
+				99E33345201B7C3C00EE31DD /* NSArray+YXYSafe.h */,
+				99E3334A201B7C3C00EE31DD /* NSArray+YXYSafe.m */,
+				99E33349201B7C3C00EE31DD /* NSObject+YXYSafe.h */,
+				99E33346201B7C3C00EE31DD /* NSObject+YXYSafe.m */,
+			);
+			path = safe_collection;
+			sourceTree = "<group>";
+		};
+		99E3339C201C66CC00EE31DD /* Template */ = {
+			isa = PBXGroup;
+			children = (
+				99E3339D201C66DA00EE31DD /* VM */,
+			);
+			path = Template;
+			sourceTree = "<group>";
+		};
+		99E3339D201C66DA00EE31DD /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				99E333A1201C673C00EE31DD /* BaseViewModel.h */,
+				99E333A2201C673C00EE31DD /* BaseViewModel.m */,
+				99E3339E201C672300EE31DD /* ViewController.h */,
+				99E3339F201C672300EE31DD /* ViewController.m */,
+				99E333B0201DC37700EE31DD /* ViewControllerContext.h */,
+				99E333B1201DC37700EE31DD /* ViewControllerContext.m */,
+				99E333A4201C674900EE31DD /* ViewModel.h */,
+				99E333A5201C674900EE31DD /* ViewModel.m */,
+				99E333A7201C6B8500EE31DD /* DemoView.h */,
+				99E333A8201C6B8500EE31DD /* DemoView.m */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		99E333AA201C93DF00EE31DD /* doc */ = {
+			isa = PBXGroup;
+			children = (
+				99E333AB201C941B00EE31DD /* memo.h */,
+			);
+			path = doc;
+			sourceTree = "<group>";
+		};
+		F249E46B22621DBF27094C88 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5C81B1AA000847AE7C6955B /* libPods-EasyApp.a */,
+				A3477CEC54534A16A9E8E166 /* libPods-EasyAppTests.a */,
+				48B6C63A13D43AF09E158DA0 /* libPods-EasyAppUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		99E332CE201B79F500EE31DD /* EasyApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99E332FB201B79F600EE31DD /* Build configuration list for PBXNativeTarget "EasyApp" */;
+			buildPhases = (
+				2FBC62EF100C205194198E77 /* [CP] Check Pods Manifest.lock */,
+				99E332CB201B79F500EE31DD /* Sources */,
+				99E332CC201B79F500EE31DD /* Frameworks */,
+				99E332CD201B79F500EE31DD /* Resources */,
+				B3DC5C26D0BF9C946A0C13F9 /* [CP] Embed Pods Frameworks */,
+				6841A2D771473EF198FE21C9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EasyApp;
+			productName = EasyApp;
+			productReference = 99E332CF201B79F500EE31DD /* EasyApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		99E332E6201B79F500EE31DD /* EasyAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99E332FE201B79F600EE31DD /* Build configuration list for PBXNativeTarget "EasyAppTests" */;
+			buildPhases = (
+				5852BA70146A63B561ED0C46 /* [CP] Check Pods Manifest.lock */,
+				99E332E3201B79F500EE31DD /* Sources */,
+				99E332E4201B79F500EE31DD /* Frameworks */,
+				99E332E5201B79F500EE31DD /* Resources */,
+				C1BAD5124948DE7EEBC97A86 /* [CP] Embed Pods Frameworks */,
+				74D5B15120017A4553E9218B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				99E332E9201B79F500EE31DD /* PBXTargetDependency */,
+			);
+			name = EasyAppTests;
+			productName = EasyAppTests;
+			productReference = 99E332E7201B79F500EE31DD /* EasyAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		99E332F1201B79F600EE31DD /* EasyAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99E33301201B79F600EE31DD /* Build configuration list for PBXNativeTarget "EasyAppUITests" */;
+			buildPhases = (
+				3A97823393AA8396FB06FD1B /* [CP] Check Pods Manifest.lock */,
+				99E332EE201B79F600EE31DD /* Sources */,
+				99E332EF201B79F600EE31DD /* Frameworks */,
+				99E332F0201B79F600EE31DD /* Resources */,
+				DF53DD1543448C4D18CE7D2C /* [CP] Embed Pods Frameworks */,
+				B6ADB5FD8DFEFD7CD4956EE3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				99E332F4201B79F600EE31DD /* PBXTargetDependency */,
+			);
+			name = EasyAppUITests;
+			productName = EasyAppUITests;
+			productReference = 99E332F2201B79F600EE31DD /* EasyAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		99E332C7201B79F500EE31DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "靳小飞";
+				TargetAttributes = {
+					99E332CE201B79F500EE31DD = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					99E332E6201B79F500EE31DD = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 99E332CE201B79F500EE31DD;
+					};
+					99E332F1201B79F600EE31DD = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 99E332CE201B79F500EE31DD;
+					};
+				};
+			};
+			buildConfigurationList = 99E332CA201B79F500EE31DD /* Build configuration list for PBXProject "EasyApp" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 99E332C6201B79F500EE31DD;
+			productRefGroup = 99E332D0201B79F500EE31DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				99E332CE201B79F500EE31DD /* EasyApp */,
+				99E332E6201B79F500EE31DD /* EasyAppTests */,
+				99E332F1201B79F600EE31DD /* EasyAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		99E332CD201B79F500EE31DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99E332DF201B79F500EE31DD /* LaunchScreen.storyboard in Resources */,
+				99E332DC201B79F500EE31DD /* Assets.xcassets in Resources */,
+				99E332DA201B79F500EE31DD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99E332E5201B79F500EE31DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99E332F0201B79F600EE31DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2FBC62EF100C205194198E77 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EasyApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A97823393AA8396FB06FD1B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EasyAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5852BA70146A63B561ED0C46 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EasyAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6841A2D771473EF198FE21C9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-EasyApp/Pods-EasyApp-resources.sh",
+				"${PODS_ROOT}/DateTools/DateTools/DateTools/DateTools.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EasyApp/Pods-EasyApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74D5B15120017A4553E9218B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EasyAppTests/Pods-EasyAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3DC5C26D0BF9C946A0C13F9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EasyApp/Pods-EasyApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6ADB5FD8DFEFD7CD4956EE3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EasyAppUITests/Pods-EasyAppUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1BAD5124948DE7EEBC97A86 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EasyAppTests/Pods-EasyAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF53DD1543448C4D18CE7D2C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EasyAppUITests/Pods-EasyAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		99E332CB201B79F500EE31DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99E33353201B7C3C00EE31DD /* NSData+ZIP.m in Sources */,
+				99E33359201B7C3C00EE31DD /* NSString+YXYSafe.m in Sources */,
+				99E3334F201B7C3C00EE31DD /* UILabel+YXYLabel.m in Sources */,
+				99E332D7201B79F500EE31DD /* MainViewController.m in Sources */,
+				99E33352201B7C3C00EE31DD /* NSDate+YXYDate.m in Sources */,
+				99E333A9201C6B8500EE31DD /* DemoView.m in Sources */,
+				99E3334D201B7C3C00EE31DD /* CALayer+PauseAimate.m in Sources */,
+				99E333A6201C674900EE31DD /* ViewModel.m in Sources */,
+				99E33354201B7C3C00EE31DD /* UIColor+Extension.m in Sources */,
+				99E33355201B7C3C00EE31DD /* NSAttributedString+YYAttributedString.m in Sources */,
+				99E333A0201C672300EE31DD /* ViewController.m in Sources */,
+				99E333A3201C673C00EE31DD /* BaseViewModel.m in Sources */,
+				99E3335A201B7C3C00EE31DD /* NSArray+YXYSafe.m in Sources */,
+				99E33351201B7C3C00EE31DD /* NSObject+JsonHelp.m in Sources */,
+				99E3334B201B7C3C00EE31DD /* UIImageView+GIF.m in Sources */,
+				99E333B2201DC37700EE31DD /* ViewControllerContext.m in Sources */,
+				99E33356201B7C3C00EE31DD /* NSString+YXYString.m in Sources */,
+				99E332E2201B79F500EE31DD /* main.m in Sources */,
+				99E33357201B7C3C00EE31DD /* NSDictionary+YXYSafe.m in Sources */,
+				99E33350201B7C3C00EE31DD /* UIImage+Extension.m in Sources */,
+				99E3334C201B7C3C00EE31DD /* UIView+YXYUI.m in Sources */,
+				99E332D4201B79F500EE31DD /* AppDelegate.m in Sources */,
+				99E33358201B7C3C00EE31DD /* NSObject+YXYSafe.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99E332E3201B79F500EE31DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99E332EC201B79F600EE31DD /* EasyAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99E332EE201B79F600EE31DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99E332F7201B79F600EE31DD /* EasyAppUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		99E332E9201B79F500EE31DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 99E332CE201B79F500EE31DD /* EasyApp */;
+			targetProxy = 99E332E8201B79F500EE31DD /* PBXContainerItemProxy */;
+		};
+		99E332F4201B79F600EE31DD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 99E332CE201B79F500EE31DD /* EasyApp */;
+			targetProxy = 99E332F3201B79F600EE31DD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		99E332D8201B79F500EE31DD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				99E332D9201B79F500EE31DD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		99E332DD201B79F500EE31DD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				99E332DE201B79F500EE31DD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		99E332F9201B79F600EE31DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		99E332FA201B79F600EE31DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		99E332FC201B79F600EE31DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21A5FA94C99E773B2A103876 /* Pods-EasyApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NUWT78Q42V;
+				GCC_PREFIX_HEADER = EasyApp/PrefixHeader.pch;
+				INFOPLIST_FILE = EasyApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaofeijin.own.EasyApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		99E332FD201B79F600EE31DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E93A356EC0F78B7A96D47F0E /* Pods-EasyApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NUWT78Q42V;
+				GCC_PREFIX_HEADER = EasyApp/PrefixHeader.pch;
+				INFOPLIST_FILE = EasyApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaofeijin.own.EasyApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		99E332FF201B79F600EE31DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7338EF257F75E784421C83BA /* Pods-EasyAppTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NUWT78Q42V;
+				INFOPLIST_FILE = EasyAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaofeijin.own.EasyAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EasyApp.app/EasyApp";
+			};
+			name = Debug;
+		};
+		99E33300201B79F600EE31DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9AF3815CE6E9F80C85A9569C /* Pods-EasyAppTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NUWT78Q42V;
+				INFOPLIST_FILE = EasyAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaofeijin.own.EasyAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EasyApp.app/EasyApp";
+			};
+			name = Release;
+		};
+		99E33302201B79F600EE31DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E60EF083BB86D0346AB0511 /* Pods-EasyAppUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NUWT78Q42V;
+				INFOPLIST_FILE = EasyAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaofeijin.own.EasyAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EasyApp;
+			};
+			name = Debug;
+		};
+		99E33303201B79F600EE31DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB3143538D0B98369326091E /* Pods-EasyAppUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NUWT78Q42V;
+				INFOPLIST_FILE = EasyAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xiaofeijin.own.EasyAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EasyApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		99E332CA201B79F500EE31DD /* Build configuration list for PBXProject "EasyApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99E332F9201B79F600EE31DD /* Debug */,
+				99E332FA201B79F600EE31DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99E332FB201B79F600EE31DD /* Build configuration list for PBXNativeTarget "EasyApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99E332FC201B79F600EE31DD /* Debug */,
+				99E332FD201B79F600EE31DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99E332FE201B79F600EE31DD /* Build configuration list for PBXNativeTarget "EasyAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99E332FF201B79F600EE31DD /* Debug */,
+				99E33300201B79F600EE31DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99E33301201B79F600EE31DD /* Build configuration list for PBXNativeTarget "EasyAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99E33302201B79F600EE31DD /* Debug */,
+				99E33303201B79F600EE31DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 99E332C7201B79F500EE31DD /* Project object */;
+}
