@@ -11,7 +11,15 @@
 #import <SDWebImage/UIImage+GIF.h>
 #import <SDWebImage/UIImage+ForceDecode.h>
 
+
+#import "MvcController.h"
+#import "MVVMController.h"
+#import "ViperController.h"
+
 @interface MainViewController ()
+{
+    __weak id _delegate; //怎么做内存管理，用weak
+}
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
@@ -23,32 +31,27 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     [self.imageView sd_setImageWithURL:[NSURL URLWithString:@"http://cc.cocimg.com/api/uploads/20170227/1488160405920572.png"] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-        
-        UIImage *i = [UIImage decodedImageWithImage:image];
-        
-        NSData *d = UIImagePNGRepresentation(image);
-        //43029
-        NSLog(@"%zd",d.length);
     }];
     
-    UIImage *image = [UIImage imageNamed:@"1488160405920572"];
-    NSData *d = UIImagePNGRepresentation(image);
-    //43029
-    NSLog(@"%zd",d.length);
     
-    return;
-    [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:@"http://cc.cocimg.com/api/uploads/20170227/1488160405920572.png"] options:0 progress:nil completed:^(UIImage * _Nullable image, NSData * _Nullable data, NSError * _Nullable error, BOOL finished) {
+    dispatch_queue_t serialQueue = dispatch_queue_create("com.dullgrass.serialQueue", DISPATCH_QUEUE_SERIAL);
+    dispatch_async(serialQueue, ^{
+        NSLog(@"会执行的代码 --- %@",[NSThread currentThread]);
         
-        UIImage *i = [UIImage decodedImageWithImage:image];
-        
-        self.imageView.image = image;
-        
-        NSData *d = UIImagePNGRepresentation(i);
-        //43029
-        NSLog(@"%zd---%zd",d.length, data.length);
-    }];
+        dispatch_sync(serialQueue, ^{
+            NSLog(@"代码不执行");
+        });
+    });
+    
 }
 
+- (IBAction)tapButton:(id)sender {
+//    MvcController *vc = [MvcController new];
+//    MVVMController *vc = [MVVMController new];
+    ViperController *vc = [ViperController new];
+
+    [self presentViewController:vc animated:YES completion:nil];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

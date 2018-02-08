@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		2952BEB1F0DFEA6A79326DED /* libPods-EasyAppUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B6C63A13D43AF09E158DA0 /* libPods-EasyAppUITests.a */; };
+		99653C652029FFD3005EBB54 /* MvcTextEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C4C2029FFD3005EBB54 /* MvcTextEditController.m */; };
+		99653C662029FFD3005EBB54 /* MvcController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C4D2029FFD3005EBB54 /* MvcController.m */; };
+		99653C682029FFD3005EBB54 /* ViperViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C552029FFD3005EBB54 /* ViperViewModel.m */; };
+		99653C692029FFD3005EBB54 /* ViperController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C572029FFD3005EBB54 /* ViperController.m */; };
+		99653C6A2029FFD3005EBB54 /* ViperRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C582029FFD3005EBB54 /* ViperRouter.m */; };
+		99653C6B2029FFD3005EBB54 /* UIViewController+Router.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C5B2029FFD3005EBB54 /* UIViewController+Router.m */; };
+		99653C6C2029FFD3005EBB54 /* MVVMViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C5F2029FFD3005EBB54 /* MVVMViewModel.m */; };
+		99653C6D2029FFD3005EBB54 /* MVVMController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C602029FFD3005EBB54 /* MVVMController.m */; };
+		99653C6E2029FFD3005EBB54 /* MVC2Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C642029FFD3005EBB54 /* MVC2Base.m */; };
+		99653C71202AD6CF005EBB54 /* ViperVm.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C70202AD6CF005EBB54 /* ViperVm.m */; };
 		99E332D4201B79F500EE31DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E332D3201B79F500EE31DD /* AppDelegate.m */; };
 		99E332D7201B79F500EE31DD /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E332D6201B79F500EE31DD /* MainViewController.m */; };
 		99E332DA201B79F500EE31DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E332D8201B79F500EE31DD /* Main.storyboard */; };
@@ -31,11 +41,6 @@
 		99E33358201B7C3C00EE31DD /* NSObject+YXYSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E33346201B7C3C00EE31DD /* NSObject+YXYSafe.m */; };
 		99E33359201B7C3C00EE31DD /* NSString+YXYSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E33347201B7C3C00EE31DD /* NSString+YXYSafe.m */; };
 		99E3335A201B7C3C00EE31DD /* NSArray+YXYSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E3334A201B7C3C00EE31DD /* NSArray+YXYSafe.m */; };
-		99E333A0201C672300EE31DD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E3339F201C672300EE31DD /* ViewController.m */; };
-		99E333A3201C673C00EE31DD /* BaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E333A2201C673C00EE31DD /* BaseViewModel.m */; };
-		99E333A6201C674900EE31DD /* ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E333A5201C674900EE31DD /* ViewModel.m */; };
-		99E333A9201C6B8500EE31DD /* DemoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E333A8201C6B8500EE31DD /* DemoView.m */; };
-		99E333B2201DC37700EE31DD /* ViewControllerContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E333B1201DC37700EE31DD /* ViewControllerContext.m */; };
 		9CDBD06BF4335E223931DA60 /* libPods-EasyAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3477CEC54534A16A9E8E166 /* libPods-EasyAppTests.a */; };
 		AFEB3410FE01B8702FDBBF0F /* libPods-EasyApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C81B1AA000847AE7C6955B /* libPods-EasyApp.a */; };
 /* End PBXBuildFile section */
@@ -61,6 +66,28 @@
 		21A5FA94C99E773B2A103876 /* Pods-EasyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyApp/Pods-EasyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		48B6C63A13D43AF09E158DA0 /* libPods-EasyAppUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EasyAppUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7338EF257F75E784421C83BA /* Pods-EasyAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyAppTests/Pods-EasyAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		99653C4C2029FFD3005EBB54 /* MvcTextEditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MvcTextEditController.m; sourceTree = "<group>"; };
+		99653C4D2029FFD3005EBB54 /* MvcController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MvcController.m; sourceTree = "<group>"; };
+		99653C4E2029FFD3005EBB54 /* MvcTextEditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MvcTextEditController.h; sourceTree = "<group>"; };
+		99653C4F2029FFD3005EBB54 /* MvcController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MvcController.h; sourceTree = "<group>"; };
+		99653C502029FFD3005EBB54 /* ControllerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControllerProtocol.h; sourceTree = "<group>"; };
+		99653C522029FFD3005EBB54 /* ViperController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViperController.h; sourceTree = "<group>"; };
+		99653C542029FFD3005EBB54 /* ViperRouter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViperRouter.h; sourceTree = "<group>"; };
+		99653C552029FFD3005EBB54 /* ViperViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViperViewModel.m; sourceTree = "<group>"; };
+		99653C572029FFD3005EBB54 /* ViperController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViperController.m; sourceTree = "<group>"; };
+		99653C582029FFD3005EBB54 /* ViperRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViperRouter.m; sourceTree = "<group>"; };
+		99653C592029FFD3005EBB54 /* ViperViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViperViewModel.h; sourceTree = "<group>"; };
+		99653C5B2029FFD3005EBB54 /* UIViewController+Router.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Router.m"; sourceTree = "<group>"; };
+		99653C5C2029FFD3005EBB54 /* UIViewController+Router.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Router.h"; sourceTree = "<group>"; };
+		99653C5E2029FFD3005EBB54 /* MVVMController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMController.h; sourceTree = "<group>"; };
+		99653C5F2029FFD3005EBB54 /* MVVMViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMViewModel.m; sourceTree = "<group>"; };
+		99653C602029FFD3005EBB54 /* MVVMController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMController.m; sourceTree = "<group>"; };
+		99653C612029FFD3005EBB54 /* MVVMViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMViewModel.h; sourceTree = "<group>"; };
+		99653C622029FFD3005EBB54 /* MVC2Protocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVC2Protocol.h; sourceTree = "<group>"; };
+		99653C632029FFD3005EBB54 /* MVC2Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVC2Base.h; sourceTree = "<group>"; };
+		99653C642029FFD3005EBB54 /* MVC2Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVC2Base.m; sourceTree = "<group>"; };
+		99653C6F202AD6CF005EBB54 /* ViperVm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViperVm.h; sourceTree = "<group>"; };
+		99653C70202AD6CF005EBB54 /* ViperVm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViperVm.m; sourceTree = "<group>"; };
 		99E332CF201B79F500EE31DD /* EasyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E332D2201B79F500EE31DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		99E332D3201B79F500EE31DD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -108,18 +135,8 @@
 		99E33348201B7C3C00EE31DD /* NSDictionary+YXYSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+YXYSafe.h"; sourceTree = "<group>"; };
 		99E33349201B7C3C00EE31DD /* NSObject+YXYSafe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YXYSafe.h"; sourceTree = "<group>"; };
 		99E3334A201B7C3C00EE31DD /* NSArray+YXYSafe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+YXYSafe.m"; sourceTree = "<group>"; };
-		99E3339E201C672300EE31DD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		99E3339F201C672300EE31DD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		99E333A1201C673C00EE31DD /* BaseViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewModel.h; sourceTree = "<group>"; };
-		99E333A2201C673C00EE31DD /* BaseViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewModel.m; sourceTree = "<group>"; };
-		99E333A4201C674900EE31DD /* ViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewModel.h; sourceTree = "<group>"; };
-		99E333A5201C674900EE31DD /* ViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewModel.m; sourceTree = "<group>"; };
-		99E333A7201C6B8500EE31DD /* DemoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoView.h; sourceTree = "<group>"; };
-		99E333A8201C6B8500EE31DD /* DemoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoView.m; sourceTree = "<group>"; };
 		99E333AB201C941B00EE31DD /* memo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = memo.h; sourceTree = "<group>"; };
 		99E333AF201DB7B700EE31DD /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		99E333B0201DC37700EE31DD /* ViewControllerContext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerContext.h; sourceTree = "<group>"; };
-		99E333B1201DC37700EE31DD /* ViewControllerContext.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerContext.m; sourceTree = "<group>"; };
 		9AF3815CE6E9F80C85A9569C /* Pods-EasyAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EasyAppTests/Pods-EasyAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		9E60EF083BB86D0346AB0511 /* Pods-EasyAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyAppUITests/Pods-EasyAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A3477CEC54534A16A9E8E166 /* libPods-EasyAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EasyAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +184,75 @@
 				DB3143538D0B98369326091E /* Pods-EasyAppUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		99653C492029FFD3005EBB54 /* MVC2 */ = {
+			isa = PBXGroup;
+			children = (
+				99653C622029FFD3005EBB54 /* MVC2Protocol.h */,
+				99653C632029FFD3005EBB54 /* MVC2Base.h */,
+				99653C642029FFD3005EBB54 /* MVC2Base.m */,
+				99653C4A2029FFD3005EBB54 /* Demo */,
+			);
+			path = MVC2;
+			sourceTree = "<group>";
+		};
+		99653C4A2029FFD3005EBB54 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				99653C502029FFD3005EBB54 /* ControllerProtocol.h */,
+				99653C5A2029FFD3005EBB54 /* Base */,
+				99653C4B2029FFD3005EBB54 /* MVC */,
+				99653C5D2029FFD3005EBB54 /* MVVM */,
+				99653C512029FFD3005EBB54 /* VIPER */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		99653C4B2029FFD3005EBB54 /* MVC */ = {
+			isa = PBXGroup;
+			children = (
+				99653C4F2029FFD3005EBB54 /* MvcController.h */,
+				99653C4D2029FFD3005EBB54 /* MvcController.m */,
+				99653C4E2029FFD3005EBB54 /* MvcTextEditController.h */,
+				99653C4C2029FFD3005EBB54 /* MvcTextEditController.m */,
+			);
+			path = MVC;
+			sourceTree = "<group>";
+		};
+		99653C512029FFD3005EBB54 /* VIPER */ = {
+			isa = PBXGroup;
+			children = (
+				99653C522029FFD3005EBB54 /* ViperController.h */,
+				99653C572029FFD3005EBB54 /* ViperController.m */,
+				99653C592029FFD3005EBB54 /* ViperViewModel.h */,
+				99653C552029FFD3005EBB54 /* ViperViewModel.m */,
+				99653C542029FFD3005EBB54 /* ViperRouter.h */,
+				99653C582029FFD3005EBB54 /* ViperRouter.m */,
+				99653C6F202AD6CF005EBB54 /* ViperVm.h */,
+				99653C70202AD6CF005EBB54 /* ViperVm.m */,
+			);
+			path = VIPER;
+			sourceTree = "<group>";
+		};
+		99653C5A2029FFD3005EBB54 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				99653C5B2029FFD3005EBB54 /* UIViewController+Router.m */,
+				99653C5C2029FFD3005EBB54 /* UIViewController+Router.h */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		99653C5D2029FFD3005EBB54 /* MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				99653C5E2029FFD3005EBB54 /* MVVMController.h */,
+				99653C602029FFD3005EBB54 /* MVVMController.m */,
+				99653C612029FFD3005EBB54 /* MVVMViewModel.h */,
+				99653C5F2029FFD3005EBB54 /* MVVMViewModel.m */,
+			);
+			path = MVVM;
 			sourceTree = "<group>";
 		};
 		99E332C6201B79F500EE31DD = {
@@ -294,26 +380,9 @@
 		99E3339C201C66CC00EE31DD /* Template */ = {
 			isa = PBXGroup;
 			children = (
-				99E3339D201C66DA00EE31DD /* VM */,
+				99653C492029FFD3005EBB54 /* MVC2 */,
 			);
 			path = Template;
-			sourceTree = "<group>";
-		};
-		99E3339D201C66DA00EE31DD /* VM */ = {
-			isa = PBXGroup;
-			children = (
-				99E333A1201C673C00EE31DD /* BaseViewModel.h */,
-				99E333A2201C673C00EE31DD /* BaseViewModel.m */,
-				99E3339E201C672300EE31DD /* ViewController.h */,
-				99E3339F201C672300EE31DD /* ViewController.m */,
-				99E333B0201DC37700EE31DD /* ViewControllerContext.h */,
-				99E333B1201DC37700EE31DD /* ViewControllerContext.m */,
-				99E333A4201C674900EE31DD /* ViewModel.h */,
-				99E333A5201C674900EE31DD /* ViewModel.m */,
-				99E333A7201C6B8500EE31DD /* DemoView.h */,
-				99E333A8201C6B8500EE31DD /* DemoView.m */,
-			);
-			path = VM;
 			sourceTree = "<group>";
 		};
 		99E333AA201C93DF00EE31DD /* doc */ = {
@@ -630,21 +699,26 @@
 				99E33359201B7C3C00EE31DD /* NSString+YXYSafe.m in Sources */,
 				99E3334F201B7C3C00EE31DD /* UILabel+YXYLabel.m in Sources */,
 				99E332D7201B79F500EE31DD /* MainViewController.m in Sources */,
+				99653C662029FFD3005EBB54 /* MvcController.m in Sources */,
+				99653C6C2029FFD3005EBB54 /* MVVMViewModel.m in Sources */,
 				99E33352201B7C3C00EE31DD /* NSDate+YXYDate.m in Sources */,
-				99E333A9201C6B8500EE31DD /* DemoView.m in Sources */,
 				99E3334D201B7C3C00EE31DD /* CALayer+PauseAimate.m in Sources */,
-				99E333A6201C674900EE31DD /* ViewModel.m in Sources */,
 				99E33354201B7C3C00EE31DD /* UIColor+Extension.m in Sources */,
+				99653C6D2029FFD3005EBB54 /* MVVMController.m in Sources */,
+				99653C652029FFD3005EBB54 /* MvcTextEditController.m in Sources */,
+				99653C692029FFD3005EBB54 /* ViperController.m in Sources */,
 				99E33355201B7C3C00EE31DD /* NSAttributedString+YYAttributedString.m in Sources */,
-				99E333A0201C672300EE31DD /* ViewController.m in Sources */,
-				99E333A3201C673C00EE31DD /* BaseViewModel.m in Sources */,
+				99653C71202AD6CF005EBB54 /* ViperVm.m in Sources */,
 				99E3335A201B7C3C00EE31DD /* NSArray+YXYSafe.m in Sources */,
+				99653C6B2029FFD3005EBB54 /* UIViewController+Router.m in Sources */,
 				99E33351201B7C3C00EE31DD /* NSObject+JsonHelp.m in Sources */,
 				99E3334B201B7C3C00EE31DD /* UIImageView+GIF.m in Sources */,
-				99E333B2201DC37700EE31DD /* ViewControllerContext.m in Sources */,
+				99653C6A2029FFD3005EBB54 /* ViperRouter.m in Sources */,
 				99E33356201B7C3C00EE31DD /* NSString+YXYString.m in Sources */,
+				99653C6E2029FFD3005EBB54 /* MVC2Base.m in Sources */,
 				99E332E2201B79F500EE31DD /* main.m in Sources */,
 				99E33357201B7C3C00EE31DD /* NSDictionary+YXYSafe.m in Sources */,
+				99653C682029FFD3005EBB54 /* ViperViewModel.m in Sources */,
 				99E33350201B7C3C00EE31DD /* UIImage+Extension.m in Sources */,
 				99E3334C201B7C3C00EE31DD /* UIView+YXYUI.m in Sources */,
 				99E332D4201B79F500EE31DD /* AppDelegate.m in Sources */,
