@@ -18,6 +18,7 @@
 		99653C6D2029FFD3005EBB54 /* MVVMController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C602029FFD3005EBB54 /* MVVMController.m */; };
 		99653C6E2029FFD3005EBB54 /* MVC2Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C642029FFD3005EBB54 /* MVC2Base.m */; };
 		99653C71202AD6CF005EBB54 /* ViperVm.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C70202AD6CF005EBB54 /* ViperVm.m */; };
+		998E534E202C1EF900B01FE8 /* UIImage+Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 998E534D202C1EF900B01FE8 /* UIImage+Photo.m */; };
 		99E332D4201B79F500EE31DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E332D3201B79F500EE31DD /* AppDelegate.m */; };
 		99E332D7201B79F500EE31DD /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E332D6201B79F500EE31DD /* MainViewController.m */; };
 		99E332DA201B79F500EE31DD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E332D8201B79F500EE31DD /* Main.storyboard */; };
@@ -88,6 +89,8 @@
 		99653C642029FFD3005EBB54 /* MVC2Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVC2Base.m; sourceTree = "<group>"; };
 		99653C6F202AD6CF005EBB54 /* ViperVm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViperVm.h; sourceTree = "<group>"; };
 		99653C70202AD6CF005EBB54 /* ViperVm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViperVm.m; sourceTree = "<group>"; };
+		998E534C202C1EF900B01FE8 /* UIImage+Photo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Photo.h"; sourceTree = "<group>"; };
+		998E534D202C1EF900B01FE8 /* UIImage+Photo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Photo.m"; sourceTree = "<group>"; };
 		99E332CF201B79F500EE31DD /* EasyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E332D2201B79F500EE31DD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		99E332D3201B79F500EE31DD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -325,6 +328,8 @@
 				99E33337201B7C3C00EE31DD /* NSData+ZIP.m */,
 				99E33339201B7C3C00EE31DD /* UIImage+Extension.h */,
 				99E33334201B7C3C00EE31DD /* UIImage+Extension.m */,
+				998E534C202C1EF900B01FE8 /* UIImage+Photo.h */,
+				998E534D202C1EF900B01FE8 /* UIImage+Photo.m */,
 				99E33341201B7C3C00EE31DD /* NSObject+JsonHelp.h */,
 				99E33335201B7C3C00EE31DD /* NSObject+JsonHelp.m */,
 				99E3333A201B7C3C00EE31DD /* NSDate+YXYDate.h */,
@@ -717,6 +722,7 @@
 				99E33356201B7C3C00EE31DD /* NSString+YXYString.m in Sources */,
 				99653C6E2029FFD3005EBB54 /* MVC2Base.m in Sources */,
 				99E332E2201B79F500EE31DD /* main.m in Sources */,
+				998E534E202C1EF900B01FE8 /* UIImage+Photo.m in Sources */,
 				99E33357201B7C3C00EE31DD /* NSDictionary+YXYSafe.m in Sources */,
 				99653C682029FFD3005EBB54 /* ViperViewModel.m in Sources */,
 				99E33350201B7C3C00EE31DD /* UIImage+Extension.m in Sources */,

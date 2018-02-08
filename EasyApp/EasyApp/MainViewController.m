@@ -33,16 +33,6 @@
     [self.imageView sd_setImageWithURL:[NSURL URLWithString:@"http://cc.cocimg.com/api/uploads/20170227/1488160405920572.png"] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
     }];
     
-    
-    dispatch_queue_t serialQueue = dispatch_queue_create("com.dullgrass.serialQueue", DISPATCH_QUEUE_SERIAL);
-    dispatch_async(serialQueue, ^{
-        NSLog(@"会执行的代码 --- %@",[NSThread currentThread]);
-        
-        dispatch_sync(serialQueue, ^{
-            NSLog(@"代码不执行");
-        });
-    });
-    
 }
 
 - (IBAction)tapButton:(id)sender {
