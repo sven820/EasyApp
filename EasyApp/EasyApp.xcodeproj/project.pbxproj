@@ -18,6 +18,8 @@
 		99653C6D2029FFD3005EBB54 /* MVVMController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C602029FFD3005EBB54 /* MVVMController.m */; };
 		99653C6E2029FFD3005EBB54 /* MVC2Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C642029FFD3005EBB54 /* MVC2Base.m */; };
 		99653C71202AD6CF005EBB54 /* ViperVm.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C70202AD6CF005EBB54 /* ViperVm.m */; };
+		99653C7E202C9CFE005EBB54 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C7C202C9CFD005EBB54 /* NSString+Hash.m */; };
+		99653C82202DEE4E005EBB54 /* PrisonBreakJudge.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C81202DEE4E005EBB54 /* PrisonBreakJudge.m */; };
 		998E534E202C1EF900B01FE8 /* UIImage+Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 998E534D202C1EF900B01FE8 /* UIImage+Photo.m */; };
 		99E332D4201B79F500EE31DD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E332D3201B79F500EE31DD /* AppDelegate.m */; };
 		99E332D7201B79F500EE31DD /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E332D6201B79F500EE31DD /* MainViewController.m */; };
@@ -89,6 +91,10 @@
 		99653C642029FFD3005EBB54 /* MVC2Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVC2Base.m; sourceTree = "<group>"; };
 		99653C6F202AD6CF005EBB54 /* ViperVm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViperVm.h; sourceTree = "<group>"; };
 		99653C70202AD6CF005EBB54 /* ViperVm.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViperVm.m; sourceTree = "<group>"; };
+		99653C7C202C9CFD005EBB54 /* NSString+Hash.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
+		99653C7D202C9CFD005EBB54 /* NSString+Hash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
+		99653C80202DEE4E005EBB54 /* PrisonBreakJudge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrisonBreakJudge.h; sourceTree = "<group>"; };
+		99653C81202DEE4E005EBB54 /* PrisonBreakJudge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrisonBreakJudge.m; sourceTree = "<group>"; };
 		998E534C202C1EF900B01FE8 /* UIImage+Photo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Photo.h"; sourceTree = "<group>"; };
 		998E534D202C1EF900B01FE8 /* UIImage+Photo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Photo.m"; sourceTree = "<group>"; };
 		99E332CF201B79F500EE31DD /* EasyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -258,6 +264,15 @@
 			path = MVVM;
 			sourceTree = "<group>";
 		};
+		99653C7F202DED28005EBB54 /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				99653C80202DEE4E005EBB54 /* PrisonBreakJudge.h */,
+				99653C81202DEE4E005EBB54 /* PrisonBreakJudge.m */,
+			);
+			path = tool;
+			sourceTree = "<group>";
+		};
 		99E332C6201B79F500EE31DD = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +301,7 @@
 				99E333AA201C93DF00EE31DD /* doc */,
 				99E3339C201C66CC00EE31DD /* Template */,
 				99E33326201B7C3C00EE31DD /* Category */,
+				99653C7F202DED28005EBB54 /* tool */,
 				99E332D2201B79F500EE31DD /* AppDelegate.h */,
 				99E332D3201B79F500EE31DD /* AppDelegate.m */,
 				99E332D5201B79F500EE31DD /* MainViewController.h */,
@@ -334,6 +350,8 @@
 				99E33335201B7C3C00EE31DD /* NSObject+JsonHelp.m */,
 				99E3333A201B7C3C00EE31DD /* NSDate+YXYDate.h */,
 				99E33336201B7C3C00EE31DD /* NSDate+YXYDate.m */,
+				99653C7D202C9CFD005EBB54 /* NSString+Hash.h */,
+				99653C7C202C9CFD005EBB54 /* NSString+Hash.m */,
 				99E33329201B7C3C00EE31DD /* uikit */,
 				99E3333B201B7C3C00EE31DD /* str */,
 				99E33342201B7C3C00EE31DD /* safe_collection */,
@@ -702,6 +720,7 @@
 			files = (
 				99E33353201B7C3C00EE31DD /* NSData+ZIP.m in Sources */,
 				99E33359201B7C3C00EE31DD /* NSString+YXYSafe.m in Sources */,
+				99653C82202DEE4E005EBB54 /* PrisonBreakJudge.m in Sources */,
 				99E3334F201B7C3C00EE31DD /* UILabel+YXYLabel.m in Sources */,
 				99E332D7201B79F500EE31DD /* MainViewController.m in Sources */,
 				99653C662029FFD3005EBB54 /* MvcController.m in Sources */,
@@ -713,6 +732,7 @@
 				99653C652029FFD3005EBB54 /* MvcTextEditController.m in Sources */,
 				99653C692029FFD3005EBB54 /* ViperController.m in Sources */,
 				99E33355201B7C3C00EE31DD /* NSAttributedString+YYAttributedString.m in Sources */,
+				99653C7E202C9CFE005EBB54 /* NSString+Hash.m in Sources */,
 				99653C71202AD6CF005EBB54 /* ViperVm.m in Sources */,
 				99E3335A201B7C3C00EE31DD /* NSArray+YXYSafe.m in Sources */,
 				99653C6B2029FFD3005EBB54 /* UIViewController+Router.m in Sources */,
