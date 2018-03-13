@@ -14,7 +14,7 @@
 
 #import "MvcController.h"
 #import "MVVMController.h"
-#import "ViperController.h"
+//#import "ViperController.h"
 
 @interface MainViewController ()
 {
@@ -37,8 +37,8 @@
 
 - (IBAction)tapButton:(id)sender {
 //    MvcController *vc = [MvcController new];
-//    MVVMController *vc = [MVVMController new];
-    ViperController *vc = [ViperController new];
+    MVVMController *vc = [MVVMController new];
+//    ViperController *vc = [ViperController new];
 
     [self presentViewController:vc animated:YES completion:nil];
 }

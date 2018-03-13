@@ -24,65 +24,96 @@
 {
     [super viewDidLoad];
     
-    [self bind:nil];
-    self.presenter.bindingView = self.view;
-    [self.presenter doAddSubView];
-    [self.presenter makeViewConstraints];
+    [self bind:[Binder new]];
+    Branch(Controller_p).bindingView = self.view;
+    [Branch(Controller_p) doAddSubView];
+    [Branch(Controller_p) makeViewConstraints];
     
     [self initSetting];
-    [self.presenter.tableView reloadData];
+    [Branch(Controller_p).tableView reloadData];
 }
 - (void)updateViewConstraints
 {
-    [self.presenter setUpdateViewConstraints];
+    [Branch(Controller_p) setUpdateViewConstraints];
     [super updateViewConstraints];
 }
 #pragma mark - private
 - (void)initSetting
 {
-    self.vm.dataSource = [NSMutableArray array];
-    [self.vm.dataSource addObject:@"title-detail"];
+    Branch(Controller_vm).dataSource = [NSMutableArray array];
+    [Branch(Controller_vm).dataSource addObject:@"title-detail"];
     self.view.backgroundColor = [UIColor brownColor];
 }
 - (BOOL)checkForSubmit
 {
-    if (self.presenter.titleView.text.length > 0 && self.presenter.detailView.text.length > 0) {
+    if (Branch(Controller_p).titleView.text.length > 0 && Branch(Controller_p).detailView.text.length > 0) {
         return YES;
     }else{
-        [self.presenter alert:@"title or detail empty!" title:@"waring"];
+        [Branch(Controller_p) alert:@"title or detail empty!" title:@"waring"];
         return NO;
     }
 }
 
 #pragma mark - MvcController_mvc
 //无业务切分，无需绑定其他的, 均return self
-- (void)bind:(id<Branch>)branch{
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self;
-    self.titleView.delegate = self;
-    self.detailView.delegate = self;
-}
-- (id<Branch>)nextBranch {
-    return self;
-}
-- (id<Branch>)request:(id<Branch>)branch info:(id)info response:(void (^)(id))response {
-    return self.nextBranch;
-}
-- (id<Controller_vm>)vm
+- (void)bind:(id<Binder>)binder
 {
+    self.binder = binder;
+    
+    Bind(self, Controller_vm);
+    Bind(self, Controller_p);
+    Bind(self, Controller_i);
+    Bind(self, Controller_r);
+    
+    self.tableView.dataSource = Branch(Controller_vm);
+    self.tableView.delegate = Branch(Controller_i);
+    self.titleView.delegate = Branch(Controller_i);
+    self.detailView.delegate = Branch(Controller_i);
+}
+
+- (id<Branch>)request:(id<BranchRequest>)info cb:(BranchRequestCallBack)cb
+{
+    //deal info
+    [self dealWithRequestInfo:info cb:cb];
+
     return self;
 }
-- (id<Controller_i>)interactor
+- (id<Branch> (^)(id<BranchRequest> info, BranchRequestCallBack cb))request
 {
-    return self;
+    return ^id<Branch> (id<BranchRequest> info, BranchRequestCallBack cb) {
+        
+        [self dealWithRequestInfo:info cb:cb];
+        
+        return self;
+    };
 }
-- (id<Controller_p>)presenter
+- (void)dealWithRequestInfo:(id<BranchRequest>)info cb:(BranchRequestCallBack)cb
 {
-    return self;
+    BranchRequest *cbInfo = [BranchRequest new];
+    id<Branch> b = self;
+    if (cb) {
+        cb(b, cbInfo);
+    }
 }
-- (id<Controller_r>)router
+- (void)branchRequestAndResponseTest
 {
-    return self;
+    BranchRequest *info;
+    
+    //伪链式调用
+    [[[Branch(Controller_vm) request:info cb:^(id<Branch> branch, id<BranchRequest> cbinfo) {
+        
+    }] request:info cb:^(id<Branch> branch, id<BranchRequest> cbinfo) {
+        
+    }] request:info cb:^(id<Branch> branch, id<BranchRequest> cbinfo) {
+        
+    }];
+    
+    //链式调用
+    Branch(Controller_vm).request(info, ^void(id<Branch> branch, id<BranchRequest> cbinfo){
+        
+    }).request(info, ^void(id<Branch> branch, id<BranchRequest> cbinfo){
+        
+    });
 }
 #pragma mark - router
 - (void)routerToEditVc:(NSString *)str index:(NSInteger)index
@@ -91,11 +122,11 @@
         if ([newStr isEqualToString:str]) {
             
         }else if(newStr.length <= 0){
-            [self.vm.dataSource removeObjectAtIndex:index];
-            [self.presenter.tableView reloadData];
+            [Branch(Controller_vm).dataSource removeObjectAtIndex:index];
+            [Branch(Controller_p).tableView reloadData];
         }else{
-            self.vm.dataSource[index] = newStr;
-            [self.presenter.tableView reloadData];
+            Branch(Controller_vm).dataSource[index] = newStr;
+            [Branch(Controller_p).tableView reloadData];
         }
     }];
     [self presentViewController:vc animated:YES completion:nil];
@@ -108,11 +139,11 @@
 //tabledatasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.vm.dataSource.count;
+    return Branch(Controller_vm).dataSource.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *model = [self.vm.dataSource objectAtIndex:indexPath.row];
+    NSString *model = [Branch(Controller_vm).dataSource objectAtIndex:indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class])];
     
     cell.textLabel.text = model;
@@ -130,16 +161,16 @@
 #pragma mark - interactor
 - (void)actionForView:(UIView *)view
 {
-    if (view == self.presenter.submitBtn) {
+    if (view == Branch(Controller_p).submitBtn) {
         if ([self checkForSubmit]) {
-            NSString *str = [NSString stringWithFormat:@"%@-%@", self.presenter.titleView.text, self.presenter.detailView.text];
-            [self.vm.dataSource addObject:[self.vm processString:str]];
-            [self.presenter.tableView reloadData];
+            NSString *str = [NSString stringWithFormat:@"%@-%@", Branch(Controller_p).titleView.text, Branch(Controller_p).detailView.text];
+            [Branch(Controller_vm).dataSource addObject:[Branch(Controller_vm) processString:str]];
+            [Branch(Controller_p).tableView reloadData];
             
-            [self.presenter clear];
+            [Branch(Controller_p) clear];
         }
-    }else if (view == self.presenter.exitBtn){
-        [self.router exit];
+    }else if (view == Branch(Controller_p).exitBtn){
+        [Branch(Controller_r) exit];
     }
 }
 
@@ -150,9 +181,9 @@
 //tabledelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *model = [self.vm.dataSource objectAtIndex:indexPath.row];
+    NSString *model = [Branch(Controller_vm).dataSource objectAtIndex:indexPath.row];
     
-    [self.router routerToEditVc:model index:indexPath.row];
+    [Branch(Controller_r) routerToEditVc:model index:indexPath.row];
 }
 #pragma mark - present
 - (void)clear
@@ -249,7 +280,7 @@
         [_submitBtn setTitle:@"提交" forState:UIControlStateNormal];
         [_submitBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _submitBtn.backgroundColor = [UIColor orangeColor];
-        [_submitBtn addTarget:self.interactor action:@selector(actionForView:) forControlEvents:UIControlEventTouchUpInside];
+        [_submitBtn addTarget:Branch(Controller_i) action:@selector(actionForView:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _submitBtn;
 }
@@ -261,7 +292,7 @@
         [_exitBtn setTitle:@"exit" forState:UIControlStateNormal];
         [_exitBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _exitBtn.backgroundColor = [UIColor orangeColor];
-        [_exitBtn addTarget:self.interactor action:@selector(actionForView:) forControlEvents:UIControlEventTouchUpInside];
+        [_exitBtn addTarget:Branch(Controller_i) action:@selector(actionForView:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _exitBtn;
 }
@@ -290,4 +321,6 @@
 @synthesize exitBtn = _exitBtn;
 
 @synthesize detailView = _detailView;
+
+@synthesize binder = _binder;
 @end

@@ -59,7 +59,8 @@
 - (id<Branch>)nextBranch {
     return nil;
 }
-- (id<Branch>)request:(id<Branch>)branch info:(id)info response:(void (^)(id))response {
+- (id<Branch>)request:(id)info response:(void(^)(id<Branch>, id info))response
+{
     return nil;
 }
 #pragma mark - present

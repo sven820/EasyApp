@@ -41,13 +41,91 @@
 //base protocol
 //这里按照viper架构的操作流来定义协议簇 vm -> interactor -> present -> router -> vm
 #pragma mark - 根协议
-@protocol Branch <NSObject>
-- (void)bind:(id<Branch>)branch;
 /**
- * return -> 由于我是按照viper操作流来定制协议的，所以这里return下一节点的branch，为了方便链式调用
+ *  Context 上下文 通常为业务切分的某个类对象，例如controller就是一个context
  */
-- (id<Branch>)request:(id<Branch>)branch info:(id)info response:(void(^)(id info))response;
-- (id<Branch>)nextBranch;
+@protocol Context <NSObject>
+@end
+/**
+ *  Branch分支 代表不同模块的根协议
+ *  与context区别，Branch是逻辑上的，Context是对象层面的，有实体，
+    所以branches用NSMapTable弱引用，contexts用NSMutableDictionary，强引用
+ */
+@protocol Branch;
+@protocol BranchRequest;
+@class Binder;
+typedef void(^BranchRequestCallBack)(id<Branch> branch, id<BranchRequest> cbInfo);
+
+@protocol Binder <NSObject>
++ (instancetype)binderWithModule:(NSString *)module;
+- (void)unBind;
+//NSMapTable可以设置弱引用，但速度比dict慢2倍，但一般我们一个节点里面不会绑定太多子节点，所以不会很影响性能
+@property (nonatomic, strong) NSString *module;//binder对应的模块
+@property (nonatomic, strong) NSMapTable *branches;
+
+@property (nonatomic, weak) Binder *superBinder;
+@property (nonatomic, strong) NSMutableArray<Binder *> *subBinders;//unBind 后，会全部移除
+- (void)addSubBinder:(Binder *)binder;
+- (void)removeFromSuperBinder;
+
+- (void)bind:(id<Branch>)branch protocol:(Protocol *)protocol;
+- (void)bind:(id<Branch>)branch protocol:(Protocol *)protocol identity:(NSString *)identity;
+- (void)unbind:(Protocol *)protocol;
+- (void)unbind:(Protocol *)protocol identity:(NSString *)identity;
+- (id<Branch>)branch:(Protocol *)protocol;
+- (id<Branch>)branch:(Protocol *)protocol identity:(NSString *)identity;
+@optional
+@property (nonatomic, strong) NSMutableDictionary *contexts;
+- (void)addCtx:(id<Context>)ctx;
+- (void)addCtx:(id<Context>)ctx identity:(NSString *)identity;
+- (void)removeCtx:(Class)cls;
+- (void)removeCtx:(Class)cls identity:(NSString *)identity;
+- (id<Context>)ctx:(Class)cls;
+- (id<Context>)ctx:(Class)cls identity:(NSString *)identity;
+@end
+@protocol BranchRequest <NSObject>
+@property (nonatomic, strong) NSString *module;//模块
+@property (nonatomic, strong) NSString *branch;//分支
+@property (nonatomic, assign) SEL action;//消息
+@property (nonatomic, weak) id target;//处理消息的对象
+@property (nonatomic, strong) id info;//消息数据
+@end
+
+@protocol Branch <NSObject>
+//bind branch, binder创建的branch中一定要收动unbind，时机是模块退出时
+@property (nonatomic, weak) id<Binder> binder;
+- (void)bind:(id<Binder>)binder;
+#define Bind(branch, p)     [self.binder bind:branch protocol:@protocol(p)]
+#define Unbind(p)           [self.binder unbind:@protocol(p)]
+#define Branch(p)           ((id<p>)[self.binder branch:@protocol(p)])
+
+#define Bind_identify(branch, p, identify)     [self.binder bind:branch protocol:@protocol(p) identity:identify]
+#define Unbind_identify(p, identify)           [self.binder unbind:@protocol(p) identity:identify]
+#define Branch_identify(p, identify)           ((id<p>)[self.binder branch:@protocol(p) identity:identify])
+
+#define AddCtx(ctx)         [self.binder addCtx:ctx]
+#define RemoveCtx(cls)      [self.binder removeCtx:[cls class]]
+#define Ctx(cls)            ((cls *)[self.binder ctx:[cls class]])
+
+#define AddCtx_identify(ctx, identify)         [self.binder addCtx:ctx identity:identify]
+#define RemoveCtx_identify(cls, identify)      [self.binder removeCtx:[cls class] identity:identify]
+#define Ctx_identify(cls, identify)            ((cls *)[self.binder ctx:[cls class] identity:identify])
+/** 伪链式调用
+ * return self
+ */
+- (id<Branch>)request:(id<BranchRequest>)info cb:(BranchRequestCallBack)cb;
+/**
+ *  消息分发
+ *
+ *  @param info request或BranchChainCallBack中的request info
+ *  @param cb info消息处理后cb
+ */
+- (void)dealWithRequestInfo:(id<BranchRequest>)info cb:(BranchRequestCallBack)cb;
+@optional
+//模拟链式调用
+- (id<Branch> (^)(id<BranchRequest> info, BranchRequestCallBack cb))request;
+//解绑binder，可以不实现，但一定在实例binder的branch中解绑binder
+- (void)unbind;
 @end
 
 #pragma mark - 展示器
@@ -97,48 +175,25 @@
  *  - 以下架构需要在具体模块中定制，采用面向协议模式开发，具体参见mvc，mvvm和viper的demo中演示
  *  //note: vm单指model数据， viewModel指包含present的viewModel封装集合
  */
-
-//注意分支分支持有的实体对象不要和下面relationship的名字重名，不然容易发生循环调用
-//relationship是不安全的，返回可能为空，在relationship种返回具体的实例对象，实例对象在分支种持有,比如MVVM_Interactor持有viewModel，通过分支来获取则是安全的
-@protocol relationship <Branch>
-- (id<Branch>)vm;
-- (id<Branch>)interactor;
-- (id<Branch>)presenter;
-- (id<Branch>)router;
-@end
 #pragma mark - MVC
-@protocol MVC <Name_Presenter, Name_Interactor, Name_VModel, Name_Router>
+@protocol MVC <Name_Presenter, Name_Interactor, Name_VModel, Name_Router, Context>
 @end
 
 #pragma mark - MVVM
-@protocol MVVM_VM;
-@protocol MVVM_Interactor <Name_Interactor, Name_Router>
-@property (nonatomic, strong) id<MVVM_VM> viewModel;
+@protocol MVVM_Interactor <Name_Interactor, Name_Router, Context>
 @end
-@protocol MVVM_VM <Name_VModel, Name_Presenter>
-@property (nonatomic, weak) id<MVVM_Interactor> context;
+@protocol MVVM_VM <Name_VModel, Name_Presenter, Context>
 @end
 
 #pragma mark - VIPER
-@protocol VIPER_Interactor;
-@protocol VIPER_ViewModel;
-@protocol VIPER_Vm;
-@protocol VIPER_Router;
 
-@protocol VIPER_Interactor <Name_Interactor>
-@property (nonatomic, strong) id<VIPER_ViewModel> viewModel;
+@protocol VIPER_Interactor <Name_Interactor, Context>
 @end
-@protocol VIPER_ViewModel <Name_Presenter>
-@property (nonatomic, weak) id<VIPER_Interactor> context;
-
-@property (nonatomic, strong) id<VIPER_Vm> vmodel;
-@property (nonatomic, strong) id<VIPER_Router> r;
+@protocol VIPER_ViewModel <Name_Presenter, Context>
 @end
-@protocol VIPER_Vm <Name_VModel>
-@property (nonatomic, weak) id<VIPER_ViewModel> viewModel;
+@protocol VIPER_Vm <Name_VModel, Context>
 @end
-@protocol VIPER_Router <Name_Router>
-@property (nonatomic, weak) id<VIPER_ViewModel> viewModel;
+@protocol VIPER_Router <Name_Router, Context>
 @end
 
 

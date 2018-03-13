@@ -10,38 +10,17 @@
 #import "MVC2Protocol.h"
 
 #pragma mark - branch
-@interface Branch : NSObject <Branch>
+@interface Binder : NSObject <Binder>
+
 @end
 
-#pragma mark - 展示器
-/**
- *  展示器
- *
- *  布局 动画 动态更新布局等
- */
-@interface Presenter : NSObject <Presenter>
+#pragma mark - request info
+@interface BranchRequest : NSObject <BranchRequest>
+
 @end
 
-#pragma mark - 视图模型
-/**
- *  视图模型
- *
- *  视图model数据绑定
- */
-@interface ViewModel : NSObject <VModel>
-@end
 
-#pragma mark - 交互器
-/**
- *  交互器
- *
- *  与视图交互
- */
-@interface Interacter : NSObject <Interactor>
-@end
 
-@interface ViewController : UIViewController <Interactor>
-@end
 
 
 

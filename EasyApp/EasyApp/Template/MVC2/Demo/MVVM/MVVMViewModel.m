@@ -7,6 +7,8 @@
 //
 
 #import "MVVMViewModel.h"
+#import "MVVMController.h"
+#import "MVVMViewModelSubModel.h"
 
 @interface MVVMViewModel ()
 
@@ -19,45 +21,40 @@
 }
 #pragma mark - branch
 //无业务切分，无需绑定其他的, 均return self
-- (void)bind:(id<Branch>)branch{
-    self.controller = branch;
+- (void)bind:(id<Binder>)binder
+{
+    self.binder = binder;
+    AddCtx(self);
     
-    self.tableView.dataSource = self;
-    self.tableView.delegate = self.controller;
-    self.titleView.delegate = self.controller;
-    self.detailView.delegate = self.controller;
+    Bind(self, Controller_vm);
+    Bind(self, Controller_p);
+        
+    self.tableView.dataSource = Branch(Controller_vm);
+    self.tableView.delegate = Branch(Controller_i);
+    self.titleView.delegate = Branch(Controller_i);
+    self.detailView.delegate = Branch(Controller_i);
+    
+    //add sub binder
+    MVVMViewModelSubModel *sb = [MVVMViewModelSubModel new];
+    [self.binder addSubBinder:sb.binder];
 }
-- (id<Branch>)nextBranch {
-    return self.controller;
+
+- (void)dealWithRequestInfo:(id<BranchRequest>)info cb:(BranchRequestCallBack)cb {
+    
 }
-- (id<Branch>)request:(id<Branch>)branch info:(id)info response:(void (^)(id))response {
-    return self.nextBranch;
-}
-- (id<Controller_vm>)vm
-{
+- (id<Branch>)request:(id<BranchRequest>)info cb:(BranchRequestCallBack)cb {
     return self;
 }
-- (id<Controller_i>)interactor
-{
-    return self.controller;
-}
-- (id<Controller_p>)presenter
-{
-    return self;
-}
-- (id<Controller_r>)router
-{
-    return self.controller;
-}
+
 #pragma mark - vm
 //tabledatasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.vm.dataSource.count;
+    return Branch(Controller_vm).dataSource.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *model = [self.vm.dataSource objectAtIndex:indexPath.row];
+    NSString *model = [Branch(Controller_vm).dataSource objectAtIndex:indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class])];
     
     cell.textLabel.text = model;
@@ -164,7 +161,7 @@
         [_submitBtn setTitle:@"提交" forState:UIControlStateNormal];
         [_submitBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _submitBtn.backgroundColor = [UIColor orangeColor];
-        [_submitBtn addTarget:self.interactor action:@selector(actionForView:) forControlEvents:UIControlEventTouchUpInside];
+        [_submitBtn addTarget:Branch(Controller_i) action:@selector(actionForView:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _submitBtn;
 }
@@ -176,7 +173,7 @@
         [_exitBtn setTitle:@"exit" forState:UIControlStateNormal];
         [_exitBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _exitBtn.backgroundColor = [UIColor orangeColor];
-        [_exitBtn addTarget:self.interactor action:@selector(actionForView:) forControlEvents:UIControlEventTouchUpInside];
+        [_exitBtn addTarget:Branch(Controller_i) action:@selector(actionForView:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _exitBtn;
 }
@@ -210,6 +207,7 @@
 @synthesize exitBtn = _exitBtn;
 
 @synthesize detailView = _detailView;
-@synthesize controller = _controller;
+
+@synthesize binder;
 
 @end

@@ -21,7 +21,8 @@
     return self.viewModel;
 }
 
-- (id<Branch>)request:(id<Branch>)branch info:(id)info response:(void (^)(id))response {
+- (id<Branch>)request:(id)info response:(void(^)(id<Branch>, id info))response
+{
     return self.nextBranch;
 }
 

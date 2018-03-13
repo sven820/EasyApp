@@ -19,66 +19,69 @@
 {
     NSLog(@"%@ -- dealloc", NSStringFromClass(self.class));
 }
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [self.binder unBind];
+}
 //demo 编辑title 和 detail 提交到列表
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    [self.viewModel bind:self];
-    self.presenter.bindingView = self.view;
-    [self.presenter doAddSubView];
-    [self.presenter makeViewConstraints];
+    [self bind:[Binder binderWithModule:NSStringFromClass(self.class)]];
+    
+    Branch(Controller_p).bindingView = self.view;
+    [Branch(Controller_p) doAddSubView];
+    [Branch(Controller_p) makeViewConstraints];
     
     [self initSetting];
-    [self.presenter.tableView reloadData];
+    [Branch(Controller_p).tableView reloadData];
 }
 - (void)updateViewConstraints
 {
-    [self.presenter setUpdateViewConstraints];
+    [Branch(Controller_p) setUpdateViewConstraints];
     [super updateViewConstraints];
 }
 #pragma mark - private
 - (void)initSetting
 {
-    self.vm.dataSource = [NSMutableArray array];
-    [self.vm.dataSource addObject:@"title-detail"];
+    Branch(Controller_vm).dataSource = [NSMutableArray array];
+    [Branch(Controller_vm).dataSource addObject:@"title-detail"];
     self.view.backgroundColor = [UIColor brownColor];
 }
 - (BOOL)checkForSubmit
 {
-    if (self.presenter.titleView.text.length > 0 && self.presenter.detailView.text.length > 0) {
+    if (Branch(Controller_p).titleView.text.length > 0 && Branch(Controller_p).detailView.text.length > 0) {
         return YES;
     }else{
-        [self.presenter alert:@"title or detail empty!" title:@"waring"];
+        [Branch(Controller_p) alert:@"title or detail empty!" title:@"waring"];
         return NO;
     }
 }
 
 #pragma mark - MvcController_mvc
-- (void)bind:(id<Branch>)branch{
-    self.viewModel = branch;
+- (void)bind:(id<Binder>)binder
+{
+    self.binder = binder;
+    AddCtx(self);
+    
+    Bind(self, Controller_i);
+    Bind(self, Controller_r);
+    
+    [[MVVMViewModel new] bind:binder];
 }
-- (id<Branch>)nextBranch {
+- (id<Branch>)request:(id<BranchRequest>)info cb:(BranchRequestCallBack)cb
+{
+    //deal info
+    [self dealWithRequestInfo:info cb:cb];
+    
     return self;
 }
-- (id<Branch>)request:(id<Branch>)branch info:(id)info response:(void (^)(id))response {
-    return self.nextBranch;
-}
-- (id<Controller_vm>)vm
+- (void)dealWithRequestInfo:(id<BranchRequest>)info cb:(BranchRequestCallBack)cb
 {
-    return self.viewModel;
-}
-- (id<Controller_i>)interactor
-{
-    return self;
-}
-- (id<Controller_p>)presenter
-{
-    return self.viewModel;
-}
-- (id<Controller_r>)router
-{
-    return self;
+    
 }
 #pragma mark - router
 - (void)routerToEditVc:(NSString *)str index:(NSInteger)index
@@ -87,11 +90,11 @@
         if ([newStr isEqualToString:str]) {
             
         }else if(newStr.length <= 0){
-            [self.vm.dataSource removeObjectAtIndex:index];
-            [self.presenter.tableView reloadData];
+            [Branch(Controller_vm).dataSource removeObjectAtIndex:index];
+            [Branch(Controller_p).tableView reloadData];
         }else{
-            self.vm.dataSource[index] = newStr;
-            [self.presenter.tableView reloadData];
+            Branch(Controller_vm).dataSource[index] = newStr;
+            [Branch(Controller_p).tableView reloadData];
         }
     }];
     [self presentViewController:vc animated:YES completion:nil];
@@ -104,16 +107,16 @@
 #pragma mark - interactor
 - (void)actionForView:(UIView *)view
 {
-    if (view == self.presenter.submitBtn) {
+    if (view == Branch(Controller_p).submitBtn) {
         if ([self checkForSubmit]) {
-            NSString *str = [NSString stringWithFormat:@"%@-%@", self.presenter.titleView.text, self.presenter.detailView.text];
-            [self.vm.dataSource addObject:[self.vm processString:str]];
-            [self.presenter.tableView reloadData];
+            NSString *str = [NSString stringWithFormat:@"%@-%@", Branch(Controller_p).titleView.text, Branch(Controller_p).detailView.text];
+            [Branch(Controller_vm).dataSource addObject:[Branch(Controller_vm) processString:str]];
+            [Branch(Controller_p).tableView reloadData];
             
-            [self.presenter clear];
+            [Branch(Controller_p) clear];
         }
-    }else if (view == self.presenter.exitBtn){
-        [self.router exit];
+    }else if (view == Branch(Controller_p).exitBtn){
+        [Branch(Controller_r) exit];
     }
 }
 
@@ -124,20 +127,15 @@
 //tabledelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *model = [self.vm.dataSource objectAtIndex:indexPath.row];
+    NSString *model = [Branch(Controller_vm).dataSource objectAtIndex:indexPath.row];
     
-    [self.router routerToEditVc:model index:indexPath.row];
+    [Branch(Controller_r) routerToEditVc:model index:indexPath.row];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 49;
 }
-@synthesize viewModel = _viewModel;
-- (id<Controller_ViewModel>)viewModel
-{
-    if (!_viewModel) {
-        _viewModel = [[MVVMViewModel alloc]init];
-    }
-    return _viewModel;
-}
+
+@synthesize binder = _binder;
+
 @end

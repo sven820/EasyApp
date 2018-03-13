@@ -8,6 +8,8 @@
 
 #import "MVC2Base.h"
 
+#define ControllerModule @"ControllerModule";//模块名
+
 #pragma mark - 视图模型 VM
 @protocol Controller_vm <VModel, UITableViewDataSource>
 @property (nonatomic, strong) NSMutableArray<NSString *> *dataSource;
@@ -33,48 +35,27 @@
 - (void)exit;
 @end
 
-@protocol Controller_relationship <relationship>
-- (id<Controller_vm>)vm;
-- (id<Controller_i>)interactor;
-- (id<Controller_p>)presenter;
-- (id<Controller_r>)router;
-@end
-
 #pragma mark - MVC
 @protocol Controller_mvc
 <Controller_vm,
 Controller_i,
 Controller_p,
 Controller_r,
-Controller_relationship>
+Context>
 @end
 #pragma mark - MVVM
-@protocol Controller_ViewModel;
-@protocol Controller_Interactor <Controller_i, Controller_r, Controller_relationship>
-@property (nonatomic, strong) id<Controller_ViewModel> viewModel;
+@protocol Controller_Interactor <Controller_i, Controller_r, Context>
 @end
-@protocol Controller_ViewModel <Controller_vm, Controller_p, Controller_relationship>
-@property (nonatomic, weak) id<Controller_Interactor> controller;
+@protocol Controller_ViewModel <Controller_vm, Controller_p, Context>
 @end
 #pragma mark - VIPER
-@protocol VController_Interactor;
-@protocol VController_ViewModel;
-@protocol VController_Vm;
-@protocol VController_Router;
-
-@protocol VController_Interactor <Controller_i, Controller_relationship>
-@property (nonatomic, strong) id<VController_ViewModel> viewModel;
+@protocol VController_Interactor <Controller_i, Context>
 @end
-@protocol VController_ViewModel <Controller_p, Controller_relationship>
-@property (nonatomic, weak) id<VController_Interactor> controller;
-@property (nonatomic, strong) id<VController_Vm> vmodel;
-@property (nonatomic, strong) id<VController_Router> route;
+@protocol VController_ViewModel <Controller_p, Context>
 @end
-@protocol VController_Vm <Controller_vm, Controller_relationship>
-@property (nonatomic, weak) id<VController_ViewModel> viewModel;
+@protocol VController_Vm <Controller_vm, Context>
 @end
-@protocol VController_Router <Controller_r, Controller_relationship>
-@property (nonatomic, weak) id<VController_ViewModel> viewModel;
+@protocol VController_Router <Controller_r, Context>
 @end
 
 

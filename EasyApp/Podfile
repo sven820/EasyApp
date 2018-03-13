@@ -12,6 +12,7 @@ pod 'SDWebImage'
 pod 'DateTools'
 pod 'YYText'
 pod 'Masonry'
+pod 'CocoaAsyncSocket'
 
   target 'EasyAppTests' do
     inherit! :search_paths
