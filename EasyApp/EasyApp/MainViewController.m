@@ -14,7 +14,9 @@
 
 #import "MvcController.h"
 #import "MVVMController.h"
+#import "NSObject+JsonHelp.h"
 //#import "ViperController.h"
+#import "TestMasonryView.h"
 
 @interface MainViewController ()
 {
@@ -22,6 +24,7 @@
 }
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
+@property (nonatomic, strong) TestMasonryView *testMasonryView;
 @end
 
 @implementation MainViewController
@@ -30,22 +33,29 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:@"http://cc.cocimg.com/api/uploads/20170227/1488160405920572.png"] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-    }];
+    self.testMasonryView = [TestMasonryView new];
+    [self.view addSubview:self.testMasonryView];
     
+    [self.testMasonryView mas_makeConstraints:^(MASConstraintMaker *make) {
+        __weak UIView *superView = self.testMasonryView.superview;
+        make.left.equalTo(superView).offset(8);
+        make.top.equalTo(superView).offset(100);
+    }];
+}
+- (void)updateViewConstraints
+{
+    
+    [super updateViewConstraints];
 }
 
-- (IBAction)tapButton:(id)sender {
-//    MvcController *vc = [MvcController new];
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.view setNeedsUpdateConstraints];
+    //    MvcController *vc = [MvcController new];
     MVVMController *vc = [MVVMController new];
-//    ViperController *vc = [ViperController new];
-
-    [self presentViewController:vc animated:YES completion:nil];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    //    ViperController *vc = [ViperController new];
+    
+//    [self presentViewController:vc animated:YES completion:nil];
 }
 
 

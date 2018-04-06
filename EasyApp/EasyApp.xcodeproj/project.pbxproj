@@ -14,7 +14,9 @@
 		99653C6E2029FFD3005EBB54 /* MVC2Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C642029FFD3005EBB54 /* MVC2Base.m */; };
 		99653C7E202C9CFE005EBB54 /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C7C202C9CFD005EBB54 /* NSString+Hash.m */; };
 		99653C82202DEE4E005EBB54 /* PrisonBreakJudge.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C81202DEE4E005EBB54 /* PrisonBreakJudge.m */; };
+		996C35FC205D3C1300E6DF38 /* MVC2Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996C35FB205D3C1300E6DF38 /* MVC2Protocol.swift */; };
 		998E534E202C1EF900B01FE8 /* UIImage+Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 998E534D202C1EF900B01FE8 /* UIImage+Photo.m */; };
+		99C3374C2074604900ECF422 /* TestMasonryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C3374B2074604900ECF422 /* TestMasonryView.m */; };
 		99CEA4C02052589100A076DB /* MVVMViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CEA4BD2052589100A076DB /* MVVMViewModel.m */; };
 		99CEA4C12052589100A076DB /* MVVMController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CEA4BE2052589100A076DB /* MVVMController.m */; };
 		99CEA4C4205382A100A076DB /* MVVMViewModelSubModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CEA4C3205382A100A076DB /* MVVMViewModelSubModel.m */; };
@@ -80,8 +82,12 @@
 		99653C7D202C9CFD005EBB54 /* NSString+Hash.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
 		99653C80202DEE4E005EBB54 /* PrisonBreakJudge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrisonBreakJudge.h; sourceTree = "<group>"; };
 		99653C81202DEE4E005EBB54 /* PrisonBreakJudge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrisonBreakJudge.m; sourceTree = "<group>"; };
+		996C35FA205D3C1200E6DF38 /* EasyApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EasyApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		996C35FB205D3C1300E6DF38 /* MVC2Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVC2Protocol.swift; sourceTree = "<group>"; };
 		998E534C202C1EF900B01FE8 /* UIImage+Photo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Photo.h"; sourceTree = "<group>"; };
 		998E534D202C1EF900B01FE8 /* UIImage+Photo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Photo.m"; sourceTree = "<group>"; };
+		99C3374A2074604900ECF422 /* TestMasonryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestMasonryView.h; sourceTree = "<group>"; };
+		99C3374B2074604900ECF422 /* TestMasonryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestMasonryView.m; sourceTree = "<group>"; };
 		99CEA4BC2052589100A076DB /* MVVMController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMController.h; sourceTree = "<group>"; };
 		99CEA4BD2052589100A076DB /* MVVMViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMViewModel.m; sourceTree = "<group>"; };
 		99CEA4BE2052589100A076DB /* MVVMController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMController.m; sourceTree = "<group>"; };
@@ -237,19 +243,22 @@
 			path = tool;
 			sourceTree = "<group>";
 		};
-		99A96AC7204149A5007D16E1 /* Module */ = {
+		996C35F9205D3BDF00E6DF38 /* MVC2_swift */ = {
 			isa = PBXGroup;
 			children = (
-				99A96AC8204149A5007D16E1 /* IM */,
+				996C35FB205D3C1300E6DF38 /* MVC2Protocol.swift */,
+				996C35FA205D3C1200E6DF38 /* EasyApp-Bridging-Header.h */,
 			);
-			path = Module;
+			path = MVC2_swift;
 			sourceTree = "<group>";
 		};
-		99A96AC8204149A5007D16E1 /* IM */ = {
+		99C337492074602C00ECF422 /* demo */ = {
 			isa = PBXGroup;
 			children = (
+				99C3374A2074604900ECF422 /* TestMasonryView.h */,
+				99C3374B2074604900ECF422 /* TestMasonryView.m */,
 			);
-			path = IM;
+			path = demo;
 			sourceTree = "<group>";
 		};
 		99CEA4BB2052589100A076DB /* MVVM */ = {
@@ -290,11 +299,11 @@
 		99E332D1201B79F500EE31DD /* EasyApp */ = {
 			isa = PBXGroup;
 			children = (
+				99C337492074602C00ECF422 /* demo */,
 				99E333AA201C93DF00EE31DD /* doc */,
 				99E3339C201C66CC00EE31DD /* Template */,
 				99E33326201B7C3C00EE31DD /* Category */,
 				99653C7F202DED28005EBB54 /* tool */,
-				99A96AC7204149A5007D16E1 /* Module */,
 				99E332D2201B79F500EE31DD /* AppDelegate.h */,
 				99E332D3201B79F500EE31DD /* AppDelegate.m */,
 				99E332D5201B79F500EE31DD /* MainViewController.h */,
@@ -396,6 +405,7 @@
 		99E3339C201C66CC00EE31DD /* Template */ = {
 			isa = PBXGroup;
 			children = (
+				996C35F9205D3BDF00E6DF38 /* MVC2_swift */,
 				99653C492029FFD3005EBB54 /* MVC2 */,
 			);
 			path = Template;
@@ -495,6 +505,7 @@
 				TargetAttributes = {
 					99E332CE201B79F500EE31DD = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					99E332E6201B79F500EE31DD = {
@@ -727,6 +738,7 @@
 				99E33355201B7C3C00EE31DD /* NSAttributedString+YYAttributedString.m in Sources */,
 				99653C7E202C9CFE005EBB54 /* NSString+Hash.m in Sources */,
 				99E3335A201B7C3C00EE31DD /* NSArray+YXYSafe.m in Sources */,
+				99C3374C2074604900ECF422 /* TestMasonryView.m in Sources */,
 				99653C6B2029FFD3005EBB54 /* UIViewController+Router.m in Sources */,
 				99E33351201B7C3C00EE31DD /* NSObject+JsonHelp.m in Sources */,
 				99E3334B201B7C3C00EE31DD /* UIImageView+GIF.m in Sources */,
@@ -737,6 +749,7 @@
 				99E33357201B7C3C00EE31DD /* NSDictionary+YXYSafe.m in Sources */,
 				99E33350201B7C3C00EE31DD /* UIImage+Extension.m in Sources */,
 				99E3334C201B7C3C00EE31DD /* UIView+YXYUI.m in Sources */,
+				996C35FC205D3C1300E6DF38 /* MVC2Protocol.swift in Sources */,
 				99E332D4201B79F500EE31DD /* AppDelegate.m in Sources */,
 				99E33358201B7C3C00EE31DD /* NSObject+YXYSafe.m in Sources */,
 			);
@@ -902,6 +915,7 @@
 			baseConfigurationReference = 21A5FA94C99E773B2A103876 /* Pods-EasyApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NUWT78Q42V;
 				GCC_PREFIX_HEADER = EasyApp/PrefixHeader.pch;
@@ -909,6 +923,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaofeijin.own.EasyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EasyApp/Template/MVC2_swift/EasyApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -918,6 +935,7 @@
 			baseConfigurationReference = E93A356EC0F78B7A96D47F0E /* Pods-EasyApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NUWT78Q42V;
 				GCC_PREFIX_HEADER = EasyApp/PrefixHeader.pch;
@@ -925,6 +943,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xiaofeijin.own.EasyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EasyApp/Template/MVC2_swift/EasyApp-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -933,6 +953,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7338EF257F75E784421C83BA /* Pods-EasyAppTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NUWT78Q42V;
@@ -949,6 +970,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9AF3815CE6E9F80C85A9569C /* Pods-EasyAppTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NUWT78Q42V;
@@ -965,6 +987,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9E60EF083BB86D0346AB0511 /* Pods-EasyAppUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NUWT78Q42V;
 				INFOPLIST_FILE = EasyAppUITests/Info.plist;
@@ -980,6 +1003,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DB3143538D0B98369326091E /* Pods-EasyAppUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = NUWT78Q42V;
 				INFOPLIST_FILE = EasyAppUITests/Info.plist;

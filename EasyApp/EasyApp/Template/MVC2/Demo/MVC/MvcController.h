@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol TestProtocol <NSObject>
+
+@property (nonatomic, strong) NSDictionary<NSString *, id<TestProtocol>> *dic;
+@property (nonatomic, strong) NSObject<TestProtocol> *test;
+
+@end
+
 @interface MvcController : UIViewController
+
 
 @end

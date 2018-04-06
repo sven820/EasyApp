@@ -8,39 +8,35 @@
 
 /**
  *  MVC2
- *  MVC2是为了解决编码过程中架构选型与app时间线上不对称，复杂度不对称问题，如果采用单一架构模式，则会出现架构调整或升级不便的问题，MVC2旨在改善这一问题
-    同时MVC2采用面向协议和分布式的编程规范，旨在提高代码的高可读性，高可测试性和高精度性
-    All you can custom!
-        按照MVC2的架构设计思想，你完全可以根据自己的习惯或业务需求来定制自己的协议簇和基协议，这是十分必要的
-    (由于个人能力有限，忘大家积极提出改进建议，谢谢， 作者：sven，微信：jinxiaofei003, 交流群：)
- *
- *  基本编程思想 面向协议，分布式架构模型，由于采用分支协议簇的方式，使得后续升级时，对代码迁移，将十分方便，具体参见demo mvc->mvvm->viper
-        1.branch 基协议，定义不同功能分支间的交互方式
-        2.分支协议簇 present, interactor, viewmodel, router...(you can custom)
-             present: 该协议下定义视图相关的接口
-             interactor:定义交互接口
-             viewmodel:定义视图模型数据
-             router:定义路由系统
-             ...(your custom)
-        3.基于分支基协议簇的3种典型架构基协议（you can custom）
- mvc: mvc架构协议簇，present，interactor，viewmodel，router...基本都在一个上下文中处理，适用于快速构建简单业务模块
-
- mvvm: mvvm架构协议簇, 适用于构建较复杂业务
-             MVVM_Interactor:interactor + router...
-             MVVM_VM: present + viewmodel...
-             ...(you can custom)
-
- viper: viper架构协议簇，适用于构建复杂业务
-             present:
-             interactor:
-             viewmodel:
-             router:
-             ...(you can custom)
+ *  MVC2是为了解决
+        1.app业务切分
+        2.业务复杂度提升后的业务切分的易重构性
+ *  按照MVC2的架构设计思想，你完全可以根据自己的习惯或业务需求来定制自己的协议簇和基协议，这是十分必要的
+ 
+ *  相关名词释义
+    基协议
+        Context - 定义业务的实现的上下文，表现为某个具体对象
+        Branch  - 定义业务模块，是业务模块的根协议，属于逻辑上的模块划分，与context区别，Branch是逻辑上的，Context是对象层面的，有实体
+                    - 所以binder中branches用NSMapTable弱引用，contexts用NSMutableDictionary，强引用
+                - Branch 在上层主要定义了：1.模块绑定， 2.模块交互
+        BranchRequest
+                - 定义模块间交互信息和消息分发
+        Binder  - 绑定，负责模块间的绑定和context的绑定，结构类似view的superview subviews这种
+    协议簇
+        Presenter（exp）
+                - 定义某个模块的基协议，属于逻辑上的业务模块划分，与context不同
+                - 协议簇是业务的上层基协议，是业务拆的过程，可根据实际自定义
+                - 协议簇需要在具体模块内被继承，自定义，表现为接口形式暴露给外部
+    业务根协议
+        MVC（exp）
+                - 是对协议簇组装的过程
+                - 属于context级别
+                - 负责定义context容器与协议簇之间的组装关系
+                - 根据业务根协议构建业务代码
+ 
  */
 
-//base protocol
-//这里按照viper架构的操作流来定义协议簇 vm -> interactor -> present -> router -> vm
-#pragma mark - 根协议
+#pragma mark - 基协议
 /**
  *  Context 上下文 通常为业务切分的某个类对象，例如controller就是一个context
  */
@@ -49,7 +45,7 @@
 /**
  *  Branch分支 代表不同模块的根协议
  *  与context区别，Branch是逻辑上的，Context是对象层面的，有实体，
-    所以branches用NSMapTable弱引用，contexts用NSMutableDictionary，强引用
+ 
  */
 @protocol Branch;
 @protocol BranchRequest;
@@ -128,6 +124,9 @@ typedef void(^BranchRequestCallBack)(id<Branch> branch, id<BranchRequest> cbInfo
 - (void)unbind;
 @end
 
+#pragma mark - 协议簇
+#pragma mark -
+//这里按照viper架构的操作流来定义协议簇 vm -> interactor -> present -> router -> vm
 #pragma mark - 展示器
 @protocol Presenter <Branch>
 //所绑定的视图容器
@@ -169,6 +168,8 @@ typedef void(^BranchRequestCallBack)(id<Branch> branch, id<BranchRequest> cbInfo
 #pragma mark - 路由 Router
 @protocol Name_Router <Router>
 @end
+
+#pragma mark -  业务根协议
 /**
  *  3种架构协议模式
  *
