@@ -7,6 +7,7 @@
 //
 
 #import "MVVMViewModelSubModel.h"
+#import "ControllerProtocol.h"
 
 @interface MVVMViewModelSubModel ()
 
@@ -32,7 +33,9 @@
     [self.binder removeFromSuperBinder];
 }
 - (void)dealWithRequestInfo:(id<BranchRequest>)info cb:(BranchRequestCallBack)cb {
-    
+    self.binder.superBinder;
+    self.binder.subBinders;
+    Branch(Controller_i);
 }
 
 - (id<Branch>)request:(id<BranchRequest>)info cb:(BranchRequestCallBack)cb {

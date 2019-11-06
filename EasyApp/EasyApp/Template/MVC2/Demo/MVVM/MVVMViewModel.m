@@ -35,10 +35,10 @@
     self.detailView.delegate = Branch(Controller_i);
     
     //add sub binder
+    //    [[MVVMViewModelSubModel new] bind:binder];
     MVVMViewModelSubModel *sb = [MVVMViewModelSubModel new];
     [self.binder addSubBinder:sb.binder];
 }
-
 - (void)dealWithRequestInfo:(id<BranchRequest>)info cb:(BranchRequestCallBack)cb {
     
 }

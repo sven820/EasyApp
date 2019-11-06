@@ -11,6 +11,7 @@
  *  MVC2是为了解决
         1.app业务切分
         2.业务复杂度提升后的业务切分的易重构性
+        3.完全面向协议编程
  *  按照MVC2的架构设计思想，你完全可以根据自己的习惯或业务需求来定制自己的协议簇和基协议，这是十分必要的
  
  *  相关名词释义
@@ -54,14 +55,16 @@ typedef void(^BranchRequestCallBack)(id<Branch> branch, id<BranchRequest> cbInfo
 
 @protocol Binder <NSObject>
 + (instancetype)binderWithModule:(NSString *)module;
++ (void)unBinderWithModule:(NSString *)module;
 - (void)unBind;
 //NSMapTable可以设置弱引用，但速度比dict慢2倍，但一般我们一个节点里面不会绑定太多子节点，所以不会很影响性能
 @property (nonatomic, strong) NSString *module;//binder对应的模块
-@property (nonatomic, strong) NSMapTable *branches;
+@property (nonatomic, strong) NSMapTable<NSString *,id<Branch>> *branches;
 
 @property (nonatomic, weak) Binder *superBinder;
 @property (nonatomic, strong) NSMutableArray<Binder *> *subBinders;//unBind 后，会全部移除
 - (void)addSubBinder:(Binder *)binder;
+- (void)removeSubBinders;
 - (void)removeFromSuperBinder;
 
 - (void)bind:(id<Branch>)branch protocol:(Protocol *)protocol;
@@ -70,8 +73,8 @@ typedef void(^BranchRequestCallBack)(id<Branch> branch, id<BranchRequest> cbInfo
 - (void)unbind:(Protocol *)protocol identity:(NSString *)identity;
 - (id<Branch>)branch:(Protocol *)protocol;
 - (id<Branch>)branch:(Protocol *)protocol identity:(NSString *)identity;
-@optional
-@property (nonatomic, strong) NSMutableDictionary *contexts;
+
+@property (nonatomic, strong) NSMutableDictionary<NSString *, id<Context>> *contexts;
 - (void)addCtx:(id<Context>)ctx;
 - (void)addCtx:(id<Context>)ctx identity:(NSString *)identity;
 - (void)removeCtx:(Class)cls;
@@ -87,9 +90,10 @@ typedef void(^BranchRequestCallBack)(id<Branch> branch, id<BranchRequest> cbInfo
 @property (nonatomic, strong) id info;//消息数据
 @end
 
-@protocol Branch <NSObject>
-//bind branch, binder创建的branch中一定要收动unbind，时机是模块退出时
+@protocol Branch <Context>
+///bind branch, binder创建的branch中一定要收动unbind，时机是模块退出时
 @property (nonatomic, weak) id<Binder> binder;
+///初始化各种ctx，branch对象等
 - (void)bind:(id<Binder>)binder;
 #define Bind(branch, p)     [self.binder bind:branch protocol:@protocol(p)]
 #define Unbind(p)           [self.binder unbind:@protocol(p)]
@@ -120,8 +124,6 @@ typedef void(^BranchRequestCallBack)(id<Branch> branch, id<BranchRequest> cbInfo
 @optional
 //模拟链式调用
 - (id<Branch> (^)(id<BranchRequest> info, BranchRequestCallBack cb))request;
-//解绑binder，可以不实现，但一定在实例binder的branch中解绑binder
-- (void)unbind;
 @end
 
 #pragma mark - 协议簇
@@ -177,24 +179,24 @@ typedef void(^BranchRequestCallBack)(id<Branch> branch, id<BranchRequest> cbInfo
  *  //note: vm单指model数据， viewModel指包含present的viewModel封装集合
  */
 #pragma mark - MVC
-@protocol MVC <Name_Presenter, Name_Interactor, Name_VModel, Name_Router, Context>
+@protocol MVC <Name_Presenter, Name_Interactor, Name_VModel, Name_Router>
 @end
 
 #pragma mark - MVVM
-@protocol MVVM_Interactor <Name_Interactor, Name_Router, Context>
+@protocol MVVM_Interactor <Name_Interactor, Name_Router>
 @end
-@protocol MVVM_VM <Name_VModel, Name_Presenter, Context>
+@protocol MVVM_VM <Name_VModel, Name_Presenter>
 @end
 
 #pragma mark - VIPER
 
-@protocol VIPER_Interactor <Name_Interactor, Context>
+@protocol VIPER_Interactor <Name_Interactor>
 @end
-@protocol VIPER_ViewModel <Name_Presenter, Context>
+@protocol VIPER_ViewModel <Name_Presenter>
 @end
-@protocol VIPER_Vm <Name_VModel, Context>
+@protocol VIPER_Vm <Name_VModel>
 @end
-@protocol VIPER_Router <Name_Router, Context>
+@protocol VIPER_Router <Name_Router>
 @end
 
 

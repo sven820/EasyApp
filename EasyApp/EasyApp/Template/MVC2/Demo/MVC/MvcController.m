@@ -24,13 +24,18 @@
 {
     [super viewDidLoad];
     
-    [self bind:[Binder new]];
+    [self bind:[Binder binderWithModule:NSStringFromClass(self.class)]];
     Branch(Controller_p).bindingView = self.view;
     [Branch(Controller_p) doAddSubView];
     [Branch(Controller_p) makeViewConstraints];
     
     [self initSetting];
     [Branch(Controller_p).tableView reloadData];
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.binder unBind];
 }
 - (void)updateViewConstraints
 {

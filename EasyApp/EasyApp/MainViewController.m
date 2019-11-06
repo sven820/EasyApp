@@ -50,12 +50,11 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [self.view setNeedsUpdateConstraints];
-    //    MvcController *vc = [MvcController new];
-    MVVMController *vc = [MVVMController new];
+    MvcController *vc = [MvcController new];
+//    MVVMController *vc = [MVVMController new];
     //    ViperController *vc = [ViperController new];
     
-//    [self presentViewController:vc animated:YES completion:nil];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 

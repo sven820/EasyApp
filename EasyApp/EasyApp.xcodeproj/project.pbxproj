@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2952BEB1F0DFEA6A79326DED /* libPods-EasyAppUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B6C63A13D43AF09E158DA0 /* libPods-EasyAppUITests.a */; };
+		99560D5D209969510063A293 /* MVC2Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99560D5C209969510063A293 /* MVC2Base.swift */; };
 		99653C652029FFD3005EBB54 /* MvcTextEditController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C4C2029FFD3005EBB54 /* MvcTextEditController.m */; };
 		99653C662029FFD3005EBB54 /* MvcController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C4D2029FFD3005EBB54 /* MvcController.m */; };
 		99653C6B2029FFD3005EBB54 /* UIViewController+Router.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C5B2029FFD3005EBB54 /* UIViewController+Router.m */; };
@@ -16,6 +17,7 @@
 		99653C82202DEE4E005EBB54 /* PrisonBreakJudge.m in Sources */ = {isa = PBXBuildFile; fileRef = 99653C81202DEE4E005EBB54 /* PrisonBreakJudge.m */; };
 		996C35FC205D3C1300E6DF38 /* MVC2Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996C35FB205D3C1300E6DF38 /* MVC2Protocol.swift */; };
 		998E534E202C1EF900B01FE8 /* UIImage+Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 998E534D202C1EF900B01FE8 /* UIImage+Photo.m */; };
+		99B7551B207D9C4F00D33D58 /* UIView+MainThreadGuard.m in Sources */ = {isa = PBXBuildFile; fileRef = 99B7551A207D9C4F00D33D58 /* UIView+MainThreadGuard.m */; };
 		99C3374C2074604900ECF422 /* TestMasonryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 99C3374B2074604900ECF422 /* TestMasonryView.m */; };
 		99CEA4C02052589100A076DB /* MVVMViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CEA4BD2052589100A076DB /* MVVMViewModel.m */; };
 		99CEA4C12052589100A076DB /* MVVMController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99CEA4BE2052589100A076DB /* MVVMController.m */; };
@@ -68,6 +70,7 @@
 		21A5FA94C99E773B2A103876 /* Pods-EasyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyApp/Pods-EasyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		48B6C63A13D43AF09E158DA0 /* libPods-EasyAppUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EasyAppUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7338EF257F75E784421C83BA /* Pods-EasyAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EasyAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EasyAppTests/Pods-EasyAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		99560D5C209969510063A293 /* MVC2Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVC2Base.swift; sourceTree = "<group>"; };
 		99653C4C2029FFD3005EBB54 /* MvcTextEditController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MvcTextEditController.m; sourceTree = "<group>"; };
 		99653C4D2029FFD3005EBB54 /* MvcController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MvcController.m; sourceTree = "<group>"; };
 		99653C4E2029FFD3005EBB54 /* MvcTextEditController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MvcTextEditController.h; sourceTree = "<group>"; };
@@ -86,6 +89,8 @@
 		996C35FB205D3C1300E6DF38 /* MVC2Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVC2Protocol.swift; sourceTree = "<group>"; };
 		998E534C202C1EF900B01FE8 /* UIImage+Photo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Photo.h"; sourceTree = "<group>"; };
 		998E534D202C1EF900B01FE8 /* UIImage+Photo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Photo.m"; sourceTree = "<group>"; };
+		99B75519207D9C4F00D33D58 /* UIView+MainThreadGuard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+MainThreadGuard.h"; sourceTree = "<group>"; };
+		99B7551A207D9C4F00D33D58 /* UIView+MainThreadGuard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+MainThreadGuard.m"; sourceTree = "<group>"; };
 		99C3374A2074604900ECF422 /* TestMasonryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestMasonryView.h; sourceTree = "<group>"; };
 		99C3374B2074604900ECF422 /* TestMasonryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestMasonryView.m; sourceTree = "<group>"; };
 		99CEA4BC2052589100A076DB /* MVVMController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMController.h; sourceTree = "<group>"; };
@@ -247,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				996C35FB205D3C1300E6DF38 /* MVC2Protocol.swift */,
+				99560D5C209969510063A293 /* MVC2Base.swift */,
 				996C35FA205D3C1200E6DF38 /* EasyApp-Bridging-Header.h */,
 			);
 			path = MVC2_swift;
@@ -357,6 +363,8 @@
 				99E33329201B7C3C00EE31DD /* uikit */,
 				99E3333B201B7C3C00EE31DD /* str */,
 				99E33342201B7C3C00EE31DD /* safe_collection */,
+				99B75519207D9C4F00D33D58 /* UIView+MainThreadGuard.h */,
+				99B7551A207D9C4F00D33D58 /* UIView+MainThreadGuard.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -732,6 +740,7 @@
 				99CEA4C02052589100A076DB /* MVVMViewModel.m in Sources */,
 				99E33352201B7C3C00EE31DD /* NSDate+YXYDate.m in Sources */,
 				99E3334D201B7C3C00EE31DD /* CALayer+PauseAimate.m in Sources */,
+				99B7551B207D9C4F00D33D58 /* UIView+MainThreadGuard.m in Sources */,
 				99E33354201B7C3C00EE31DD /* UIColor+Extension.m in Sources */,
 				99CEA4C12052589100A076DB /* MVVMController.m in Sources */,
 				99653C652029FFD3005EBB54 /* MvcTextEditController.m in Sources */,
@@ -749,6 +758,7 @@
 				99E33357201B7C3C00EE31DD /* NSDictionary+YXYSafe.m in Sources */,
 				99E33350201B7C3C00EE31DD /* UIImage+Extension.m in Sources */,
 				99E3334C201B7C3C00EE31DD /* UIView+YXYUI.m in Sources */,
+				99560D5D209969510063A293 /* MVC2Base.swift in Sources */,
 				996C35FC205D3C1300E6DF38 /* MVC2Protocol.swift in Sources */,
 				99E332D4201B79F500EE31DD /* AppDelegate.m in Sources */,
 				99E33358201B7C3C00EE31DD /* NSObject+YXYSafe.m in Sources */,
